@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fabrication Insights blog</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../ata.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.chip[aria-pressed="true"]{background:#14181C;color:#fff;border-color:#14181C}
+</style>
+</helmet>
+<div class="ata" style="background: #fff">
+  <dc-import name="Header" menu="none" active="about" hint-size="100%,118px"></dc-import>
+  <main>
+    <section aria-labelledby="blog-title" style="background: var(--paper); border-bottom: 1px solid var(--steel-200)">
+      <div class="wrap" style="padding-top: 28px; padding-bottom: clamp(40px, 5cqi, 64px)">
+        <nav aria-label="Breadcrumb"><ol class="crumbs" style="color: var(--steel-600)"><li><a href="Home.dc.html" style="color: var(--steel-600)">Home</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: var(--ink)">Blog</li></ol></nav>
+        <div style="max-width: 760px; display: flex; flex-direction: column; gap: 20px; padding-top: clamp(32px, 4cqi, 56px)">
+          <p class="eyebrow">Fabrication Insights</p>
+          <h1 id="blog-title" class="disp h1">From the shop floor.</h1>
+          <p class="lead">Company news, market insights and technology updates from the ATA Industries team.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section style="padding-top: clamp(40px, 5cqi, 72px)">
+      <div class="wrap">
+        <a class="card" href="BlogPost.dc.html" style="flex-direction: row; flex-wrap: wrap">
+          <div class="ph" style="flex: 1.3 1 480px; min-height: 360px">[Featured article image]</div>
+          <div style="flex: 1 1 380px; padding: clamp(28px, 3.5cqi, 48px); display: flex; flex-direction: column; gap: 16px; justify-content: center">
+            <span class="badge badge-arc" style="align-self: flex-start">Featured · Emerging Technology</span>
+            <h2 class="disp h2">The Role of Robotic Welding in Modern Fabrication</h2>
+            <p class="body">How robotic welding reduces part-to-part variability, and where manual welding still wins.</p>
+            <span class="mono" style="color: var(--steel-600)">[Date] · [X] min read</span>
+            <span class="card-cta">Read article <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- FILTER + GRID -->
+    <section class="sec" style="padding-top: clamp(40px, 5cqi, 72px)">
+      <div class="wrap">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--steel-200)">
+          <h2 class="disp h3">All articles</h2>
+          <div role="group" aria-label="Filter by category" style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{cats}}" as="c" hint-placeholder-count="6">
+              <button type="button" class="chip" aria-pressed="{{c.pressed}}" onClick="{{c.pick}}" style="font-family: inherit; cursor: pointer">{{c.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div class="g3">
+          <sc-for list="{{posts}}" as="p" hint-placeholder-count="6">
+            <a class="card" href="BlogPost.dc.html"><div class="ph" style="aspect-ratio: 16 / 9">[Article image]</div><div class="card-body"><span class="mono" style="color: var(--steel-600)">{{p.cat}} · [Date]</span><h3 class="disp h4">{{p.title}}</h3><span class="card-cta">Read article <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span></div></a>
+          </sc-for>
+        </div>
+        <div style="display: flex; justify-content: center; margin-top: 48px">
+          <button type="button" class="btn btn-secondary">Load more articles</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <dc-import name="CtaBand" hint-size="100%,460px"></dc-import>
+  <dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const cat = st.cat || 'All';
+    const all = [
+      ['Company News', 'ATA Industries Achieves ISO 9001:2015 Certification'],
+      ['Market Insights', 'Why Electrical OEMs Are Increasingly Outsourcing Fabrication'],
+      ['Metal Fabrication', "What's the Difference Between Welding and Fabrication?"],
+      ['Market Insights', 'How to Estimate Fabrication Project Costs Without Guesswork'],
+      ['Emerging Technology', 'Quality Control in Metal Fabrication: Processes, Standards and Why It Matters'],
+      ['Company News', 'Acquiring 17 Acres to Support Long-Term Growth'],
+      ['Metal Fabrication', 'Metal Finishing Techniques Explained'],
+      ['Market Insights', 'Why Mid-Volume Runs Need a Different Fabrication Partner'],
+      ['Emerging Technology', 'How Fiber Lasers Outperform CO₂ Lasers in Modern Shops'],
+      ['Case Studies', 'Working Smarter for Our Customers: Why ISO 9001 Matters']
+    ];
+    const names = ['All', 'Company News', 'Market Insights', 'Emerging Technology', 'Metal Fabrication', 'Case Studies'];
+    return {
+      cats: names.map((n) => ({
+        label: n,
+        pressed: n === cat ? 'true' : 'false',
+        pick: () => this.setState({ cat: n })
+      })),
+      posts: all.filter((p) => cat === 'All' || p[0] === cat).map((p) => ({ cat: p[0], title: p[1] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

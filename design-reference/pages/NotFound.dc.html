@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Page not found</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../ata.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="ata" style="background: #fff">
+  <dc-import name="Header" menu="none" hint-size="100%,118px"></dc-import>
+  <main style="background: var(--mill); color: #fff">
+    <div class="wrap" style="padding-top: clamp(64px, 8cqi, 128px); padding-bottom: clamp(64px, 8cqi, 128px); display: flex; flex-direction: column; gap: 24px; max-width: 1360px">
+      <p class="mono" style="margin: 0; color: var(--arc-on-dark)">Error 404 · Out of tolerance</p>
+      <p class="disp" aria-hidden="true" style="font-size: clamp(120px, 18cqi, 260px); line-height: .85; color: #fff">404</p>
+      <div class="rule-dark" style="max-width: 720px"></div>
+      <h1 class="disp h2" style="color: #fff; max-width: 720px">This page isn't on the drawing.</h1>
+      <p class="lead" style="color: var(--on-dark-2); max-width: 620px">It may have moved when LMI Manufacturing became ATA Industries. Try one of these instead.</p>
+      <div class="stack-m" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+        <a class="btn btn-primary" href="Quote.dc.html">Request a Quote</a>
+        <a class="btn btn-ghost-dark" href="Home.dc.html">Home</a>
+        <a class="btn btn-ghost-dark" href="Services.dc.html">Services</a>
+        <a class="btn btn-ghost-dark" href="Industries.dc.html">Industries</a>
+      </div>
+    </div>
+  </main>
+  <dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ATA Industries brand and design system</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../ata.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="ata" style="background: #fff">
+
+  <!-- COVER -->
+  <section style="background: var(--mill); color: var(--on-dark)">
+    <div class="wrap" style="padding-top: 88px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 56px">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px">
+        <p class="mono" style="margin: 0; color: var(--on-dark-2)">Brand &amp; design system · v1.0 · October 2026</p>
+        <p class="mono" style="margin: 0; color: var(--on-dark-2)">For Astro build · Small Business Starter v2 base</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap">
+        <svg width="132" height="132" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#FFFFFF"></rect><path d="M8.5 28.5 18 7.5l9.5 21" fill="none" stroke="#14181C" stroke-width="3.4"></path><path d="M12.2 21.5h11.6" stroke="#C2410C" stroke-width="3.4"></path></svg>
+        <div style="display: flex; flex-direction: column; line-height: 1">
+          <span style="font-family: var(--f-display); font-stretch: 115%; font-weight: 800; font-size: 120px; letter-spacing: .04em; color: #fff">ATA</span>
+          <span style="font-family: var(--f-mono); font-size: 26px; letter-spacing: .5em; margin-top: 8px; color: #fff">INDUSTRIES</span>
+        </div>
+      </div>
+      <div class="rule-dark"></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 32px 64px; justify-content: space-between">
+        <p class="lead" style="color: var(--on-dark); max-width: 640px">Engineering-drawing clarity for a 60-year-old fabricator: graphite and steel neutrals, one arc-orange accent reserved for action, condensed industrial headlines, and monospaced specs that read like a print callout.</p>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-family: var(--f-mono); font-size: 13px; color: var(--on-dark-2)">
+          <span>01 Logo · 02 Color · 03 Type</span>
+          <span>04 Buttons · 05 Cards · 06 Stats &amp; badges</span>
+          <span>07 Forms · 08 Navigation · 09 Footer · 10 Imagery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 LOGO -->
+  <section class="sec" style="border-bottom: 1px solid var(--steel-200)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">01 / Logo direction</p>
+          <h2 class="disp h2">A bent-sheet “A” with a laser-cut crossbar.</h2>
+        </div>
+        <p class="body" style="max-width: 460px">The mark reads as a formed profile seen end-on, with the crossbar as a single cut line in arc orange. The wordmark sets ATA in wide Archivo ExtraBold over a tracked mono descriptor. Direction only: have it redrawn as vector artwork before launch.</p>
+      </div>
+      <div class="g3">
+        <div style="border: 1px solid var(--steel-200); min-height: 260px; display: flex; flex-direction: column">
+          <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px">
+            <span class="logo" style="transform: scale(1.6)"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#14181C"></rect><path d="M8.5 28.5 18 7.5l9.5 21" fill="none" stroke="#FFFFFF" stroke-width="3.4"></path><path d="M12.2 21.5h11.6" stroke="#C2410C" stroke-width="3.4"></path></svg><span class="logo-word"><b>ATA</b><i>Industries</i></span></span>
+          </div>
+          <p class="mono" style="margin: 0; padding: 14px 16px; border-top: 1px solid var(--steel-200); color: var(--steel-600)">Primary lockup · on light</p>
+        </div>
+        <div style="background: var(--mill); min-height: 260px; display: flex; flex-direction: column">
+          <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px">
+            <span class="logo" style="transform: scale(1.6); color: #fff"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#FFFFFF"></rect><path d="M8.5 28.5 18 7.5l9.5 21" fill="none" stroke="#14181C" stroke-width="3.4"></path><path d="M12.2 21.5h11.6" stroke="#C2410C" stroke-width="3.4"></path></svg><span class="logo-word"><b>ATA</b><i>Industries</i></span></span>
+          </div>
+          <p class="mono" style="margin: 0; padding: 14px 16px; border-top: 1px solid var(--mill-line); color: var(--on-dark-2)">Reversed · on mill / photography</p>
+        </div>
+        <div style="border: 1px solid var(--steel-200); min-height: 260px; display: flex; flex-direction: column">
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 32px">
+            <span class="logo"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#14181C"></rect><path d="M8.5 28.5 18 7.5l9.5 21" fill="none" stroke="#FFFFFF" stroke-width="3.4"></path><path d="M12.2 21.5h11.6" stroke="#C2410C" stroke-width="3.4"></path></svg><span class="logo-word"><b>ATA</b><i>Industries</i></span></span>
+            <span style="display: flex; align-items: center; gap: 8px; font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--steel-600); padding-top: 12px; border-top: 1px solid var(--steel-200)"><span style="width: 6px; height: 6px; background: var(--arc); display: inline-block"></span>Formerly LMI Manufacturing</span>
+          </div>
+          <p class="mono" style="margin: 0; padding: 14px 16px; border-top: 1px solid var(--steel-200); color: var(--steel-600)">Transition lockup · first 12–18 months</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; margin-top: 28px" class="small">
+        <span><b>Clearspace</b> — the mark's width on all sides.</span>
+        <span><b>Minimum</b> — 120 px wide (lockup), 24 px (mark alone / favicon).</span>
+        <span><b>Never</b> — recolor the crossbar, outline, or set the wordmark in another face.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 COLOR -->
+  <section class="sec" style="border-bottom: 1px solid var(--steel-200)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">02 / Color</p>
+          <h2 class="disp h2">Steel neutrals do the work. Orange means “act”.</h2>
+        </div>
+        <p class="body" style="max-width: 460px">Arc orange is reserved for primary CTAs, eyebrows and single highlights, roughly 5% of any screen. All text pairings shown pass WCAG AA.</p>
+      </div>
+      <div class="g4" style="grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr))">
+        <div class="swatch"><div class="swatch-chip" style="background: #14181C; color: #fff">--ink</div><div class="swatch-meta"><b>Graphite · Primary</b><span class="mono" style="color: var(--steel-600)">#14181C</span><span class="help">Headlines, body, logo, secondary buttons</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #C2410C; color: #fff">--arc</div><div class="swatch-meta"><b>Arc Orange · Accent</b><span class="mono" style="color: var(--steel-600)">#C2410C · 5.2:1 on white</span><span class="help">Primary CTA, eyebrows, focus of attention</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #9F3509; color: #fff">--arc-hover</div><div class="swatch-meta"><b>Arc Deep</b><span class="mono" style="color: var(--steel-600)">#9F3509</span><span class="help">CTA hover / pressed, link hover</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #0E1114; color: #F2783F">--arc-on-dark</div><div class="swatch-meta"><b>Arc Bright</b><span class="mono" style="color: var(--steel-600)">#F2783F · on mill only</span><span class="help">Eyebrows and accents on dark sections</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #0E1114; color: #fff">--mill</div><div class="swatch-meta"><b>Mill Scale · Dark section</b><span class="mono" style="color: var(--steel-600)">#0E1114</span><span class="help">Hero, problem/solution, footer, utility bar</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #181D22; color: #fff">--mill-2</div><div class="swatch-meta"><b>Mill 2</b><span class="mono" style="color: var(--steel-600)">#181D22</span><span class="help">Alternate dark section, facility band</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #3D4650; color: #fff">--steel-700</div><div class="swatch-meta"><b>Steel 700</b><span class="mono" style="color: var(--steel-600)">#3D4650</span><span class="help">Body copy on light</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #525C67; color: #fff">--steel-600</div><div class="swatch-meta"><b>Steel 600</b><span class="mono" style="color: var(--steel-600)">#525C67</span><span class="help">Captions, labels, meta (min. text grey)</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #C5CBD1; color: #14181C">--steel-300</div><div class="swatch-meta"><b>Steel 300</b><span class="mono" style="color: var(--steel-600)">#C5CBD1</span><span class="help">Input borders, rules, ticks</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #DCE0E4; color: #14181C">--steel-200</div><div class="swatch-meta"><b>Steel 200</b><span class="mono" style="color: var(--steel-600)">#DCE0E4</span><span class="help">Card borders, dividers</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #F5F5F2; color: #14181C; border-bottom: 1px solid var(--steel-200)">--paper</div><div class="swatch-meta"><b>Paper</b><span class="mono" style="color: var(--steel-600)">#F5F5F2</span><span class="help">Alternate light section ground</span></div></div>
+        <div class="swatch"><div class="swatch-chip" style="background: #FFFFFF; color: #14181C; border-bottom: 1px solid var(--steel-200)">--white</div><div class="swatch-meta"><b>White</b><span class="mono" style="color: var(--steel-600)">#FFFFFF</span><span class="help">Default page ground, cards</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 TYPE -->
+  <section class="sec" style="border-bottom: 1px solid var(--steel-200)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">03 / Typography</p>
+          <h2 class="disp h2">Condensed for headlines. Plain-spoken for reading. Mono for specs.</h2>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; max-width: 460px" class="small">
+          <span><b>Archivo</b> (variable, width 80%, 700) — display &amp; stats</span>
+          <span><b>IBM Plex Sans</b> 400 / 500 / 600 — body, UI</span>
+          <span><b>IBM Plex Mono</b> 400 / 500 — eyebrows, labels, specs</span>
+          <span style="color: var(--steel-600)">All three are free Google Fonts; self-host as WOFF2 subsets in Astro.</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 22px 0; border-top: 1px solid var(--steel-200)">
+          <span class="mono" style="color: var(--steel-600); flex: 0 0 220px">Display · 80 / 1.02 · fluid 42–80</span>
+          <span class="disp d1" style="flex: 1 1 600px">Built to print, on schedule.</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 22px 0; border-top: 1px solid var(--steel-200)">
+          <span class="mono" style="color: var(--steel-600); flex: 0 0 220px">H1 · 60 / 1.02 · fluid 36–60</span>
+          <span class="disp h1" style="flex: 1 1 600px">Precision Laser Cutting</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 22px 0; border-top: 1px solid var(--steel-200)">
+          <span class="mono" style="color: var(--steel-600); flex: 0 0 220px">H2 · 46 / 1.05 · fluid 30–46</span>
+          <span class="disp h2" style="flex: 1 1 600px">Every process your part needs, under one roof.</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 22px 0; border-top: 1px solid var(--steel-200)">
+          <span class="mono" style="color: var(--steel-600); flex: 0 0 220px">H3 · 28 / 1.12</span>
+          <span class="disp h3" style="flex: 1 1 600px">Why clients trust ATA Industries</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 22px 0; border-top: 1px solid var(--steel-200)">
+          <span class="mono" style="color: var(--steel-600); flex: 0 0 220px">H4 · 21 / 1.15</span>
+          <span class="disp h4" style="flex: 1 1 600px">Robotic &amp; manual welding</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 22px 0; border-top: 1px solid var(--steel-200)">
+          <span class="mono" style="color: var(--steel-600); flex: 0 0 220px">Lead · Plex Sans 20 / 1.55</span>
+          <p class="lead" style="flex: 1 1 600px; max-width: 720px">Laser cutting, forming, welding, machining and assembly under one roof, backed by 60+ years of fabrication experience.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 22px 0; border-top: 1px solid var(--steel-200)">
+          <span class="mono" style="color: var(--steel-600); flex: 0 0 220px">Body · 17 / 1.6 · max 68ch</span>
+          <p class="body" style="flex: 1 1 600px; max-width: 680px">Send drawings and requirements and you'll have pricing within 24–48 hours. Standard lead times run 2–3 weeks, with 20% of shop capacity reserved for rush jobs.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; padding: 22px 0; border-top: 1px solid var(--steel-200); border-bottom: 1px solid var(--steel-200)">
+          <span class="mono" style="color: var(--steel-600); flex: 0 0 220px">Label · Plex Mono 12 caps +.12em</span>
+          <span style="flex: 1 1 600px; display: flex; gap: 32px; flex-wrap: wrap"><span class="eyebrow">03 / Core capabilities</span><span class="mono" style="color: var(--steel-700)">6kW fiber · 79″ × 158″ bed</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 BUTTONS + 06 STATS -->
+  <section class="sec" style="border-bottom: 1px solid var(--steel-200)">
+    <div class="wrap" style="display: flex; flex-direction: column; gap: 72px">
+      <div>
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">04 / Buttons &amp; links</p>
+            <h2 class="disp h2">One orange button per view.</h2>
+          </div>
+          <p class="body" style="max-width: 460px">2 px radius, 52 px tall (44 px small). “Request a Quote” is always the primary; phone and secondary paths use outline or ghost styles.</p>
+        </div>
+        <div class="g2">
+          <div style="border: 1px solid var(--steel-200); padding: 32px; display: flex; flex-direction: column; gap: 20px">
+            <p class="mono" style="margin: 0; color: var(--steel-600)">On light</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+              <a class="btn btn-primary" href="#">Request a Quote <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+              <a class="btn btn-primary is-hover" href="#">Hover</a>
+              <a class="btn btn-secondary" href="#">Talk to our team</a>
+              <a class="btn btn-secondary is-hover" href="#">Hover</a>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center">
+              <a class="btn btn-primary btn-sm" href="#">Small primary</a>
+              <a class="btn btn-secondary btn-sm" href="#">Small secondary</a>
+              <a class="link-arrow" href="#">Text link with arrow <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+            </div>
+          </div>
+          <div style="background: var(--mill); padding: 32px; display: flex; flex-direction: column; gap: 20px">
+            <p class="mono" style="margin: 0; color: var(--on-dark-2)">On dark / video</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+              <a class="btn btn-primary" href="#">Request a Quote <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+              <a class="btn btn-ghost-dark" href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>Call (262) 629-5527</a>
+            </div>
+            <div><a class="link-arrow link-arrow-dark" href="#">Tour the facility <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">06 / Stats, trust &amp; badges</p>
+            <h2 class="disp h2">Proof, set like a spec sheet.</h2>
+          </div>
+          <p class="body" style="max-width: 460px">Every stat sits on the measuring-rule divider, the system's signature detail. The trust bar appears in the first viewport of every key page.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 32px">
+          <div style="background: var(--mill); color: #fff; padding: 8px 32px 32px">
+            <div class="trust">
+              <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">60+ yrs</p><p class="stat-label" style="color: var(--on-dark-2)">Fabrication experience</p></div>
+              <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">ISO 9001</p><p class="stat-label" style="color: var(--on-dark-2)">2015 certified quality</p></div>
+              <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">24–48 hr</p><p class="stat-label" style="color: var(--on-dark-2)">Quote turnaround</p></div>
+              <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">2–3 wk</p><p class="stat-label" style="color: var(--on-dark-2)">Standard lead times</p></div>
+              <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">20%</p><p class="stat-label" style="color: var(--on-dark-2)">Capacity held for rush</p></div>
+            </div>
+            <p class="mono" style="margin: 20px 0 0; color: var(--on-dark-2); font-size: 11px">Trust bar · dark (hero)</p>
+          </div>
+          <div class="g3">
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <div class="rule"></div>
+              <p class="stat-num" style="font-size: 56px">24–48 hr</p>
+              <p class="stat-label">Quote turnaround</p>
+              <p class="body small">Send drawings and get pricing back within two business days.</p>
+              <p class="mono" style="margin: 8px 0 0; color: var(--steel-600); font-size: 11px">Stat / benefit block</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 16px">
+              <p class="mono" style="margin: 0; color: var(--steel-600); font-size: 11px">Badges &amp; tags</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px">
+                <span class="badge badge-solid">ISO 9001:2015</span>
+                <span class="badge badge-arc">Rush capacity</span>
+                <span class="badge" style="color: var(--steel-700)">24–48 hr quote</span>
+                <span class="badge" style="color: var(--steel-700)">Up to 1″ weld</span>
+              </div>
+              <div class="iso-badge" style="align-self: flex-start">
+                <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"></rect><path d="M9 17.5l5 5L25 11" fill="none" stroke="#C2410C" stroke-width="2.5"></path></svg>
+                <div><b>ISO 9001:2015</b><span>Certified quality management</span></div>
+              </div>
+              <p class="help">Replace with the registrar's official mark if your certificate allows its use.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 16px">
+              <p class="mono" style="margin: 0; color: var(--steel-600); font-size: 11px">Process step</p>
+              <div style="display: flex; align-items: center; gap: 12px"><span class="step-num">01</span><span style="flex: 1; height: 1px; background: var(--steel-300)"></span></div>
+              <p class="disp h4">Quote</p>
+              <p class="body small">Send drawings and requirements. You'll have pricing in 24–48 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 CARDS -->
+  <section class="sec" style="background: var(--paper); border-bottom: 1px solid var(--steel-200)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">05 / Cards</p>
+          <h2 class="disp h2">Square corners, hairline borders, photography first.</h2>
+        </div>
+        <p class="body" style="max-width: 460px">Hover darkens the border to graphite and turns the CTA orange. No shadows, no lift: the page stays light and fast.</p>
+      </div>
+      <div class="g3" style="align-items: start">
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <p class="mono" style="margin: 0; color: var(--steel-600)">Service card</p>
+          <a class="card" href="#">
+            <div class="ph" style="aspect-ratio: 4 / 3">[Photo: fiber laser mid-cut]</div>
+            <div class="card-body">
+              <span class="card-idx mono" style="color: var(--steel-600)">01</span>
+              <h3 class="disp h4">Laser Cutting</h3>
+              <p class="body small">Fast, clean cuts on sheet and plate with a 6kW fiber laser.</p>
+              <p class="spec">6kW fiber · 79″ × 158″ bed</p>
+              <span class="card-cta">Explore laser cutting <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span>
+            </div>
+          </a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <p class="mono" style="margin: 0; color: var(--steel-600)">Industry tile</p>
+          <a class="ind-tile" href="#">
+            <div class="ph" style="aspect-ratio: 4 / 3">[Photo: data center enclosure parts]</div>
+            <span class="ind-name">Data Centers <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span>
+          </a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <p class="mono" style="margin: 0; color: var(--steel-600)">Blog card</p>
+          <a class="card" href="#">
+            <div class="ph" style="aspect-ratio: 16 / 9">[Article image]</div>
+            <div class="card-body">
+              <span class="mono" style="color: var(--steel-600)">[Category] · [Date]</span>
+              <h3 class="disp h4">How to prepare SolidWorks files for a faster quote</h3>
+              <p class="body small">What to include in your package so estimating can price it on the first pass.</p>
+              <span class="card-cta">Read article <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 FORMS -->
+  <section class="sec" style="border-bottom: 1px solid var(--steel-200)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">07 / Form fields</p>
+          <h2 class="disp h2">Big targets, visible labels, plain errors.</h2>
+        </div>
+        <p class="body" style="max-width: 460px">Labels always sit above the field; never placeholder-only. 52 px fields, 16 px text so iOS doesn't zoom. Required fields marked with an orange asterisk.</p>
+      </div>
+      <div class="g4" style="align-items: start">
+        <div class="field">
+          <label for="ds-name">Full name <span class="req" aria-hidden="true">*</span></label>
+          <input id="ds-name" class="input" type="text" placeholder="Jane Smith">
+          <p class="help">Default</p>
+        </div>
+        <div class="field">
+          <label for="ds-co">Company <span class="req" aria-hidden="true">*</span></label>
+          <input id="ds-co" class="input is-focus" type="text" value="Acme Controls">
+          <p class="help">Focus</p>
+        </div>
+        <div class="field">
+          <label for="ds-email">Work email <span class="req" aria-hidden="true">*</span></label>
+          <input id="ds-email" class="input is-error" type="email" value="jane@acme" aria-invalid="true" aria-describedby="ds-email-err">
+          <p id="ds-email-err" class="err">Enter a full email address, like name@company.com</p>
+        </div>
+        <div class="field">
+          <label for="ds-mat">Material</label>
+          <div class="select-wrap">
+            <select id="ds-mat" class="input">
+              <option>Select a material</option>
+              <option>Carbon steel</option>
+              <option>Stainless steel</option>
+              <option>Aluminum</option>
+              <option>Other / not sure</option>
+            </select>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </div>
+          <p class="help">Select</p>
+        </div>
+      </div>
+      <div class="g2" style="margin-top: 32px; align-items: start">
+        <div class="field">
+          <label for="ds-desc">Project description</label>
+          <textarea id="ds-desc" class="input" placeholder="Part function, critical features, finish, packaging…"></textarea>
+        </div>
+        <div class="field">
+          <span class="label">CAD / drawing files</span>
+          <div class="drop">
+            <span style="width: 52px; height: 52px; display: inline-flex; align-items: center; justify-content: center; background: #fff; border: 1px solid var(--steel-300)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"></path></svg></span>
+            <div style="flex: 1 1 200px">
+              <p style="margin: 0; font-weight: 600">Drag files here or <label for="ds-file" style="color: var(--arc); text-decoration: underline; cursor: pointer">browse</label></p>
+              <p class="help">SolidWorks (.sldprt, .sldasm), STEP, DXF, PDF · up to [25] MB each</p>
+            </div>
+            <input id="ds-file" type="file" multiple style="position: absolute; width: 1px; height: 1px; opacity: 0">
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--steel-200); background: #fff; font-size: 14px">
+            <span class="mono" style="color: var(--steel-700)">bracket-rev-C.sldprt</span>
+            <span class="help" style="margin-left: auto">2.4 MB</span>
+            <button type="button" aria-label="Remove bracket-rev-C.sldprt" style="width: 32px; height: 32px; border: 0; background: none; cursor: pointer; color: var(--steel-700)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 NAV -->
+  <section class="sec" style="background: var(--paper); border-bottom: 1px solid var(--steel-200)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">08 / Header, mega-menu &amp; mobile nav</p>
+          <h2 class="disp h2">Quote button and phone number on every page.</h2>
+        </div>
+        <p class="body" style="max-width: 460px">Utility bar carries ISO and the “Formerly LMI Manufacturing” note. Services and Industries open full-width mega-menus with a quote promo. Below 1040 px the nav collapses to a menu button; the call button stays visible on phones.</p>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <p class="mono wrap" style="margin-top: 0; margin-bottom: 0; color: var(--steel-600); width: 100%">Desktop · default</p>
+      <dc-import name="Header" menu="none" hint-size="100%,118px"></dc-import>
+      <p class="mono wrap" style="margin-top: 32px; margin-bottom: 0; color: var(--steel-600); width: 100%">Desktop · Services mega-menu open</p>
+      <div style="position: relative; height: 520px">
+        <dc-import name="Header" menu="services" active="services" hint-size="100%,118px"></dc-import>
+      </div>
+    </div>
+    <div class="wrap" style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <p class="mono" style="margin: 0; color: var(--steel-600)">Mobile · closed</p>
+        <div style="width: 390px; max-width: 100%; border: 1px solid var(--steel-300); background: #fff">
+          <dc-import name="Header" menu="none" hint-size="100%,118px"></dc-import>
+          <div class="ph" style="height: 200px">[Page content]</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <p class="mono" style="margin: 0; color: var(--steel-600)">Mobile · menu open</p>
+        <div style="width: 390px; max-width: 100%; border: 1px solid var(--steel-300); background: #fff">
+          <dc-import name="Header" menu="none" mobile-open="{{ true }}" hint-size="100%,820px"></dc-import>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 FOOTER -->
+  <section style="padding-top: clamp(64px, 8cqi, 120px)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">09 / Footer</p>
+          <h2 class="disp h2">Everything a buyer or a truck driver needs.</h2>
+        </div>
+        <p class="body" style="max-width: 460px">Separate corporate and shipping addresses, receiving hours, phone set large, ISO badge and the LMI transition note.</p>
+      </div>
+    </div>
+    <dc-import name="Footer" hint-size="100%,560px"></dc-import>
+  </section>
+
+  <!-- 10 IMAGERY -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">10 / Photography, video &amp; layout</p>
+          <h2 class="disp h2">Real people, real machines, real parts.</h2>
+        </div>
+        <p class="body" style="max-width: 460px">Shoot on the ATA floor: hands on parts, sparks, finished assemblies on pallets. Neutral grade, no filters, no stock or renders. Striped boxes in these templates mark where photography goes.</p>
+      </div>
+      <div class="g4">
+        <div style="display: flex; flex-direction: column; gap: 10px"><div class="ph" style="aspect-ratio: 4 / 5">[Hero video] 10–15 s muted loop · poster JPG + MP4/WebM ≤ 3 MB · lazy, no autoplay on save-data</div><p class="small" style="margin: 0"><b>Hero video</b> — laser, robotic weld, press brake in sequence.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 10px"><div class="ph" style="aspect-ratio: 4 / 5">[Process detail] tight crop, shallow depth</div><p class="small" style="margin: 0"><b>Process detail</b> — cards and galleries, 4:3.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 10px"><div class="ph" style="aspect-ratio: 4 / 5">[People] operator at machine, eye-level</div><p class="small" style="margin: 0"><b>People</b> — named roles where possible.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 10px"><div class="ph" style="aspect-ratio: 4 / 5">[Finished parts] on steel bench or pallet</div><p class="small" style="margin: 0"><b>Finished parts</b> — proof of output, 1:1 or 4:3.</p></div>
+      </div>
+      <div class="g3" style="margin-top: 48px">
+        <div style="display: flex; flex-direction: column; gap: 8px"><p class="mono" style="margin: 0; color: var(--steel-600)">Grid</p><p class="body small">Max content width 1360 px with 40 px gutters (20 px under 640 px). Grids use auto-fit columns, so cards reflow without breakpoints.</p></div>
+        <div style="display: flex; flex-direction: column; gap: 8px"><p class="mono" style="margin: 0; color: var(--steel-600)">Spacing</p><div style="display: flex; align-items: flex-end; gap: 6px; height: 64px"><span style="width: 4px; height: 4px; background: var(--ink)"></span><span style="width: 8px; height: 8px; background: var(--ink)"></span><span style="width: 12px; height: 12px; background: var(--ink)"></span><span style="width: 16px; height: 16px; background: var(--ink)"></span><span style="width: 24px; height: 24px; background: var(--ink)"></span><span style="width: 32px; height: 32px; background: var(--ink)"></span><span style="width: 48px; height: 48px; background: var(--ink)"></span><span style="width: 64px; height: 64px; background: var(--arc)"></span></div><p class="help">4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · sections 64–120 fluid</p></div>
+        <div style="display: flex; flex-direction: column; gap: 8px"><p class="mono" style="margin: 0; color: var(--steel-600)">Performance</p><p class="body small">No parallax, carousels or scroll animation. Two webfonts + one mono, subset. Hero video only on home; every other hero is a single optimized image.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ATA Industries header</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../ata.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<header class="ata" style="position: relative; z-index: 20">
+  <div class="hdr-util">
+    <div class="wrap">
+      <div style="display: flex; gap: 14px; align-items: center">
+        <span class="hide-m">ISO 9001:2015 certified</span>
+        <span class="hide-m" aria-hidden="true" style="color: var(--steel-600)">/</span>
+        <span class="hide-m">AWS D1.1 welding</span>
+        <span class="hide-m" aria-hidden="true" style="color: var(--steel-600)">/</span>
+        <span class="hide-m">60+ years fabricating</span>
+        <span class="show-m">Formerly LMI Manufacturing</span>
+      </div>
+      <div class="hide-m" style="display: flex; gap: 8px; align-items: center">
+        <span style="width: 6px; height: 6px; background: var(--arc-on-dark); display: inline-block"></span>
+        <span style="color: var(--on-dark)">Formerly LMI Manufacturing</span>
+      </div>
+    </div>
+  </div>
+  <div class="hdr-bar">
+    <div class="wrap">
+      <a href="Home.dc.html" class="logo" aria-label="ATA Industries home"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#14181C"></rect><path d="M8.5 28.5 18 7.5l9.5 21" fill="none" stroke="#FFFFFF" stroke-width="3.4"></path><path d="M12.2 21.5h11.6" stroke="#C2410C" stroke-width="3.4"></path></svg><span class="logo-word"><b>ATA</b><i>Industries</i></span></a>
+      <nav class="nav hide-t" aria-label="Primary">
+        <button type="button" class="{{svcCls}}" aria-expanded="{{svcExpanded}}" onClick="{{toggleSvc}}">Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <button type="button" class="{{indCls}}" aria-expanded="{{indExpanded}}" onClick="{{toggleInd}}">Industries <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <button type="button" class="{{capCls}}" aria-expanded="{{capExpanded}}" onClick="{{toggleCap}}">Capabilities <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <button type="button" class="{{aboutCls}}" aria-expanded="{{aboutExpanded}}" onClick="{{toggleAbout}}">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <a class="{{contactCls}}" href="Quote.dc.html">Contact</a>
+      </nav>
+      <div style="display: flex; gap: 14px; align-items: center; margin-left: auto">
+        <a class="hide-t" href="tel:+12626295527" style="font-weight: 600; font-size: 15px; color: var(--ink); text-decoration: none; display: inline-flex; gap: 8px; align-items: center; min-height: 44px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>(262) 629-5527</a>
+        <a class="btn btn-primary btn-sm hide-m" href="Quote.dc.html">Request a Quote</a>
+        <a class="icon-btn show-m" href="tel:+12626295527" aria-label="Call (262) 629-5527"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg></a>
+        <button type="button" class="icon-btn show-t" aria-label="{{mobLabel}}" aria-expanded="{{mobExpanded}}" onClick="{{toggleMob}}">
+          <sc-if value="{{mobOpen}}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></sc-if>
+          <sc-if value="{{mobClosed}}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></sc-if>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{svcOpen}}" hint-placeholder-val="{{ false }}">
+    <div class="mega hide-t">
+      <div class="wrap" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 380px; gap: 40px; padding-top: 36px; padding-bottom: 40px">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Core fabrication</p>
+          <a class="mega-link" href="Service-Laser.dc.html"><b>Laser Cutting</b><span>6kW fiber laser, sheets up to 79″ × 158″</span></a>
+          <a class="mega-link" href="#"><b>Forming</b><span>Press brakes from 28 to 350 tons</span></a>
+          <a class="mega-link" href="#"><b>Welding</b><span>AWS-qualified manual and robotic, up to 1″</span></a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px; visibility: hidden" aria-hidden="true">Core</p>
+          <a class="mega-link" href="#"><b>Machining</b><span>HAAS and Milltronics CNC mills and lathe</span></a>
+          <a class="mega-link" href="#"><b>Assembly</b><span>Sub-assemblies to finished units</span></a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Ancillary services</p>
+          <a class="mega-link" href="#"><b>Sheet Metal Punching</b></a>
+          <a class="mega-link" href="#"><b>Roll Forming</b></a>
+          <a class="mega-link" href="#"><b>Panel Bending</b></a>
+          <a class="mega-link" href="#"><b>Finishing &amp; Powder Coating</b></a>
+        </div>
+        <div style="background: var(--mill); color: var(--on-dark); padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <p class="mono" style="margin: 0; color: var(--arc-on-dark)">Quotes in 24–48 hours</p>
+          <p class="disp h4" style="color: #fff; font-size: 26px">Send your SolidWorks or CAD files.</p>
+          <p class="small" style="margin: 0; color: var(--on-dark-2)">Tell us quantity, material and when you need parts. We'll come back with pricing within 24–48 hours.</p>
+          <a class="btn btn-primary btn-sm" href="Quote.dc.html" style="align-self: flex-start; margin-top: 6px">Request a Quote</a>
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--steel-200)">
+        <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; min-height: 56px; gap: 24px">
+          <span class="small" style="color: var(--steel-600)">Laser cutting, forming, welding, machining and assembly — all under one roof.</span>
+          <a class="link-arrow" href="Services.dc.html" style="font-size: 15px">All services <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{indOpen}}" hint-placeholder-val="{{ false }}">
+    <div class="mega hide-t">
+      <div class="wrap" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) 380px; gap: 40px; padding-top: 36px; padding-bottom: 40px">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Industries served</p>
+          <a class="mega-link" href="#"><b>Electrical &amp; Power Distribution</b></a>
+          <a class="mega-link" href="Industry-DataCenters.dc.html"><b>Data Centers</b></a>
+          <a class="mega-link" href="#"><b>Food Processing</b></a>
+          <a class="mega-link" href="#"><b>Industrial Machinery</b></a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px; visibility: hidden" aria-hidden="true">More</p>
+          <a class="mega-link" href="#"><b>Material Handling &amp; Logistics</b></a>
+          <a class="mega-link" href="#"><b>Agriculture</b></a>
+          <a class="mega-link" href="#"><b>OEM</b></a>
+          <a class="mega-link" href="Industries.dc.html"><b>All industries →</b></a>
+        </div>
+        <div style="background: var(--paper); padding: 28px; display: flex; flex-direction: column; gap: 14px; border-top: 3px solid var(--ink)">
+          <p class="mono" style="margin: 0; color: var(--steel-600)">Our parts run in systems used by</p>
+          <p class="disp h4" style="font-size: 24px">Walmart, Coca-Cola, Amazon, McDonald's and Folgers.</p>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{capOpen}}" hint-placeholder-val="{{ false }}">
+    <div class="mega hide-t">
+      <div class="wrap" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) 380px; gap: 40px; padding-top: 36px; padding-bottom: 40px">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Capabilities</p>
+          <a class="mega-link" href="Equipment.dc.html"><b>Equipment &amp; Technology</b><span>Full spec sheets for every machine</span></a>
+          <a class="mega-link" href="Facility.dc.html"><b>Facility</b><span>40,000 sq ft in Hartford, Wisconsin</span></a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Quality</p>
+          <a class="mega-link" href="Quality.dc.html"><b>Quality Assurance</b><span>Traceability, QT9, OEM audits welcome</span></a>
+          <a class="mega-link" href="Certifications.dc.html"><b>Certifications &amp; Qualifications</b><span>ISO 9001:2015 · AWS D1.1</span></a>
+        </div>
+        <div style="background: var(--mill); color: var(--on-dark); padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <p class="mono" style="margin: 0; color: var(--arc-on-dark)">Laser repeatability</p>
+          <p class="disp" style="font-size: 44px; color: #fff">0.0004″</p>
+          <p class="small" style="margin: 0; color: var(--on-dark-2)">6kW fiber laser, 158″ × 79″ max sheet.</p>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{aboutOpen}}" hint-placeholder-val="{{ false }}">
+    <div class="mega hide-t">
+      <div class="wrap" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) 380px; gap: 40px; padding-top: 36px; padding-bottom: 40px">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Company</p>
+          <a class="mega-link" href="About.dc.html"><b>About ATA Industries</b><span>Our story since 1960, leadership, values</span></a>
+          <a class="mega-link" href="Careers.dc.html"><b>Careers</b><span>Welders, operators, machinists and more</span></a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Resources</p>
+          <a class="mega-link" href="Blog.dc.html"><b>Fabrication Insights</b><span>News, market insights, technology</span></a>
+          <a class="mega-link" href="ServiceArea.dc.html"><b>Service Area</b><span>Wisconsin, the Midwest and nationwide</span></a>
+        </div>
+        <div style="background: var(--paper); padding: 28px; display: flex; flex-direction: column; gap: 12px; border-top: 3px solid var(--ink)">
+          <p class="mono" style="margin: 0; color: var(--steel-600)">New name, same team</p>
+          <p class="disp h4" style="font-size: 24px">LMI Manufacturing is now ATA Industries.</p>
+          <a class="link-arrow" href="About.dc.html" style="align-self: flex-start; font-size: 15px">Read the story <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{mobOpen}}" hint-placeholder-val="{{ false }}">
+    <div class="show-t" style="background: #fff; border-bottom: 1px solid var(--steel-200)">
+      <nav class="wrap" aria-label="Mobile" style="display: flex; flex-direction: column; padding-top: 8px; padding-bottom: 28px">
+        <a class="mrow" href="Services.dc.html" style="border-top: 0">Services <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></a>
+        <div style="display: flex; flex-direction: column; padding: 0 0 12px 16px; border-left: 2px solid var(--steel-200); margin-bottom: 8px">
+          <a href="Service-Laser.dc.html" style="color: var(--steel-700); text-decoration: none; padding: 10px 0; font-size: 16px">Laser Cutting</a>
+          <a href="#" style="color: var(--steel-700); text-decoration: none; padding: 10px 0; font-size: 16px">Forming</a>
+          <a href="#" style="color: var(--steel-700); text-decoration: none; padding: 10px 0; font-size: 16px">Welding</a>
+          <a href="#" style="color: var(--steel-700); text-decoration: none; padding: 10px 0; font-size: 16px">Machining</a>
+          <a href="#" style="color: var(--steel-700); text-decoration: none; padding: 10px 0; font-size: 16px">Assembly</a>
+          <a href="Services.dc.html" style="color: var(--ink); font-weight: 600; text-decoration: none; padding: 10px 0; font-size: 16px">All services →</a>
+        </div>
+        <a class="mrow" href="Industries.dc.html">Industries <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+        <a class="mrow" href="Equipment.dc.html">Capabilities <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+        <a class="mrow" href="About.dc.html">About <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+        <a class="mrow" href="Careers.dc.html">Careers</a>
+        <a class="mrow" href="Blog.dc.html">Blog</a>
+        <a class="mrow" href="Quote.dc.html" style="border-bottom: 1px solid var(--steel-100)">Contact</a>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 24px">
+          <a class="btn btn-primary" href="Quote.dc.html">Request a Quote</a>
+          <a class="btn btn-secondary" href="tel:+12626295527">Call (262) 629-5527</a>
+        </div>
+        <p class="mono" style="margin: 20px 0 0; color: var(--steel-600); text-align: center">Quotes in 24–48 hrs · ISO 9001:2015</p>
+      </nav>
+    </div>
+  </sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"menu":{"editor":"enum","options":["none","services","industries","capabilities","about"],"default":"services"},"mobileOpen":{"editor":"boolean","default":false},"active":{"editor":"enum","options":["","services","industries","capabilities","about","contact"],"default":""},"$preview":{"width":1440,"height":640}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const menu = st.menu !== undefined ? st.menu : (this.props.menu ?? 'services');
+    const mob = st.mob !== undefined ? st.mob : !!this.props.mobileOpen;
+    const active = this.props.active ?? '';
+    const cls = (key) => 'nav-item' + (active === key ? ' is-active' : '') + (menu === key ? ' is-open' : '');
+    const tog = (key) => () => this.setState({ menu: menu === key ? 'none' : key });
+    const ex = (key) => (menu === key ? 'true' : 'false');
+    return {
+      svcOpen: menu === 'services', indOpen: menu === 'industries', capOpen: menu === 'capabilities', aboutOpen: menu === 'about',
+      svcExpanded: ex('services'), indExpanded: ex('industries'), capExpanded: ex('capabilities'), aboutExpanded: ex('about'),
+      svcCls: cls('services'), indCls: cls('industries'), capCls: cls('capabilities'), aboutCls: cls('about'), contactCls: cls('contact'),
+      toggleSvc: tog('services'), toggleInd: tog('industries'), toggleCap: tog('capabilities'), toggleAbout: tog('about'),
+      mobOpen: mob, mobClosed: !mob, mobExpanded: mob ? 'true' : 'false', mobLabel: mob ? 'Close menu' : 'Open menu',
+      toggleMob: () => this.setState({ mob: !mob })
+    };
+  }
+}
+</script>
+</body>
+</html>

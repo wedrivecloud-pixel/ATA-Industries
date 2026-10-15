@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Equipment and technology</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../ata.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="ata" style="background: #fff">
+  <dc-import name="Header" menu="none" active="capabilities" hint-size="100%,118px"></dc-import>
+  <main>
+    <section aria-labelledby="eq-title" style="background: var(--paper); border-bottom: 1px solid var(--steel-200)">
+      <div class="wrap" style="padding-top: 28px; padding-bottom: clamp(40px, 5cqi, 72px)">
+        <nav aria-label="Breadcrumb"><ol class="crumbs" style="color: var(--steel-600)"><li><a href="Home.dc.html" style="color: var(--steel-600)">Home</a></li><li aria-hidden="true">/</li><li><a href="#" style="color: var(--steel-600)">Capabilities</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: var(--ink)">Equipment &amp; Technology</li></ol></nav>
+        <div style="display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-end; justify-content: space-between; padding-top: clamp(32px, 4cqi, 56px)">
+          <div style="max-width: 780px; display: flex; flex-direction: column; gap: 22px">
+            <p class="eyebrow">Equipment &amp; technology</p>
+            <h1 id="eq-title" class="disp h1">Technical specifications, machine by machine.</h1>
+            <p class="lead">Check sheet sizes, tonnages and travels before you send a drawing. If your part is near a limit, call us and we'll talk it through.</p>
+          </div>
+          <div class="stack-m" style="display: flex; flex-wrap: wrap; gap: 12px">
+            <a class="btn btn-primary" href="Quote.dc.html">Request a Quote</a>
+            <a class="btn btn-secondary" href="#">Equipment list (PDF)</a>
+          </div>
+        </div>
+        <nav aria-label="Jump to equipment" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px">
+          <a class="chip" href="#cutting">Cutting &amp; punching</a>
+          <a class="chip" href="#forming">Forming</a>
+          <a class="chip" href="#machining">Machining &amp; turning</a>
+          <a class="chip" href="#welding">Welding</a>
+          <a class="chip" href="#finishing">Finishing</a>
+        </nav>
+      </div>
+    </section>
+
+    <sc-for list="{{groups}}" as="g" hint-placeholder-count="5">
+      <section class="sec" id="{{g.id}}" style="border-bottom: 1px solid var(--steel-200); padding-top: clamp(56px, 6cqi, 96px); padding-bottom: clamp(56px, 6cqi, 96px)">
+        <div class="wrap">
+          <div class="sec-head" style="margin-bottom: 32px">
+            <div>
+              <p class="eyebrow">{{g.eyebrow}}</p>
+              <h2 class="disp h2">{{g.title}}</h2>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(520px, 100%), 1fr)); gap: 24px">
+            <sc-for list="{{g.machines}}" as="m" hint-placeholder-count="2">
+              <article style="border: 1px solid var(--steel-200); display: flex; flex-direction: column">
+                <div style="display: flex; flex-wrap: wrap; gap: 0">
+                  <div class="ph" style="flex: 1 1 200px; min-height: 180px">{{m.photo}}</div>
+                  <div style="flex: 1.4 1 260px; padding: 24px; display: flex; flex-direction: column; gap: 8px; justify-content: center">
+                    <p class="mono" style="margin: 0; color: var(--arc)">{{m.kind}}</p>
+                    <h3 class="disp h3">{{m.name}}</h3>
+                    <p class="body small">{{m.blurb}}</p>
+                  </div>
+                </div>
+                <div style="padding: 4px 24px 20px; overflow-x: auto">
+                  <table class="spec-table">
+                    <tbody>
+                      <sc-for list="{{m.rows}}" as="r" hint-placeholder-count="4">
+                        <tr><th scope="row" style="padding-top: 12px; padding-bottom: 12px">{{r.k}}</th><td style="padding-top: 12px; padding-bottom: 12px; font-family: var(--f-mono); font-size: 14px">{{r.v}}</td></tr>
+                      </sc-for>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </sc-for>
+  </main>
+  <dc-import name="CtaBand" hint-size="100%,460px"></dc-import>
+  <dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const R = (pairs) => pairs.map((p) => ({ k: p[0], v: p[1] }));
+    return {
+      groups: [
+        { id: 'cutting', eyebrow: 'Cutting & punching', title: 'Laser, turret punch and shear', machines: [
+          { kind: 'Laser cutting', name: '6kW big-bed fiber laser', photo: '[Photo: fiber laser]', blurb: 'Precision cutting on full-size sheets with minimal waste.', rows: R([['Max sheet size (X, Y)', '158″ × 79″'], ['Max axis travel (X, Y, Z)', '160″ × 81″ × 4″'], ['Positioning speed (X, Y)', '4,724″/min per axis'], ['Max Z-axis speed', '2,362″/min'], ['Repeatability', '0.0004″']]) },
+          { kind: 'Punching', name: 'Turret punch', photo: '[Photo: turret punch]', blurb: 'Nearly 1,000 tools in the library to cut setup time and tooling cost.', rows: R([['Max sheet size (X, Y)', '100″ × 39″'], ['Max axis travel (X, Y)', '39″ × 50″'], ['Table speed (X, Y combined)', '1,968″/min'], ['Turret stations', '58'], ['Strokes per minute', '350'], ['Hits per minute (1″ centers)', '200']]) },
+          { kind: 'Shearing', name: 'Shear', photo: '[Photo: shear]', blurb: 'Straight cuts on sheet stock up to 12 ft long.', rows: R([['Capacity, mild steel', '1/4″ (0.250″)'], ['Shear length', '144″'], ['Rake of upper blade', '1/4″'], ['Speed', '60 strokes/min'], ['Gap / throat', '18″'], ['Hold-downs', '13']]) }
+        ]},
+        { id: 'forming', eyebrow: 'Forming', title: 'Press brakes and rollers', machines: [
+          { kind: 'Press brake', name: 'Precision press brakes', photo: '[Photo: press brake]', blurb: 'Bending, forming and shaping for light brackets through heavy plate.', rows: R([['Capacity', '28–350 ton'], ['Overall die surface', '10′–12′'], ['Stroke length', '8″'], ['Open height', '15″'], ['Press speed', '80 cycles/min'], ['Tolerance', '±0.005″']]) },
+          { kind: 'Roll forming', name: 'Plate rollers', photo: '[Photo: rollers]', blurb: 'Rolled cylinders, cones and curves.', rows: R([['Max bed length', '6′'], ['Max material thickness', '5/16″ (0.312″)'], ['Roll diameter', '8″']]) }
+        ]},
+        { id: 'machining', eyebrow: 'Machining & turning', title: 'CNC mills and lathe', machines: [
+          { kind: 'CNC milling', name: 'HAAS VF-4 SS', photo: '[Photo: HAAS VF-4 SS]', blurb: 'High-speed vertical machining center.', rows: R([['Table size', '52.0″ × 19.5″'], ['Travels (X, Y, Z)', '50″ × 20″ × 25″'], ['Spindle speed', '100–12,000 RPM'], ['Rapid traverse', '1,400 IPM'], ['Max cutting', '833 IPM']]) },
+          { kind: 'CNC milling', name: 'Milltronics RH30', photo: '[Photo: Milltronics RH30]', blurb: 'Large-table vertical machining center.', rows: R([['Table size', '73″ × 24″'], ['Travels (X, Y, Z)', '60″ × 30″ × 28″'], ['Spindle speed', '100–8,000 RPM'], ['Rapid traverse', '500 IPM']]) },
+          { kind: 'CNC milling', name: 'HAAS VF-4 milling center', photo: '[Photo: HAAS VF-4]', blurb: 'Vertical milling center for general machining.', rows: R([['Table size', '40″ × 19″'], ['Travels (X, Y, Z)', '50″ × 20″ × 25″'], ['Spindle nose to table', '4″–29″'], ['Rapid traverse', '710 IPM'], ['Spindle speed', '0–7,500 RPM']]) },
+          { kind: 'CNC turning', name: 'HAAS SL-20T lathe', photo: '[Photo: HAAS SL-20T]', blurb: 'CNC lathe for turned components.', rows: R([['Travels (X, Z)', '8.45″ × 20″'], ['Max turning diameter', '10″'], ['Max turning length', '20″'], ['Max bar capacity', '2″'], ['Swing over bed', '23″'], ['Spindle speed', '50–3,400 RPM']]) }
+        ]},
+        { id: 'welding', eyebrow: 'Welding', title: 'Manual and robotic welding', machines: [
+          { kind: 'Robotic welding', name: 'Cooper Cobot', photo: '[Photo: Cooper Cobot cell]', blurb: 'Collaborative robot welding for consistent, repeatable beads.', rows: R([['Tolerance', 'Within ±0.2 mm in some cases'], ['Code', 'AWS D1.1'], ['Cell specs', '[Reach · payload · positioner]']]) },
+          { kind: 'Manual welding', name: 'AWS-qualified welding team', photo: '[Photo: welder at work]', blurb: 'Complex weldments, large assemblies and multi-part structures.', rows: R([['Processes', 'MIG · TIG · stud · solder & brazing'], ['Qualification', 'Up to 1″ thick with WPSs'], ['Oversight', 'Third-party welding engineer reviews WPS/WPQ'], ['Calibration', 'Welders calibrated annually']]) }
+        ]},
+        { id: 'finishing', eyebrow: 'Finishing', title: 'Paint booth and partners', machines: [
+          { kind: 'Finishing', name: 'Batch paint booth', photo: '[Photo: paint booth]', blurb: 'In-house painting; powder coating and polishing through vetted local partners.', rows: R([['Paint types', 'Enamels · catalyst paints'], ['Two-part systems', 'Epoxy · polyurethane'], ['Powder coating', 'Local partners, inspected by ATA before shipment']]) }
+        ]}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
