@@ -1,0 +1,50 @@
+{
+  "name": "ata-industries",
+  "type": "module",
+  "version": "2.0.0",
+  "description": "ATA Industries manufacturing website",
+  "author": "",
+  "license": "MIT",
+  "keywords": [
+    "astro",
+    "withastro",
+    "astro-theme",
+    "astro7",
+    "tailwind",
+    "tailwindcss",
+    "css",
+    "ui",
+    "small-business",
+    "starter",
+    "template",
+    "view-transitions"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.2",
+    "astro-robots-txt": "^1.0.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@playwright/test": "^1.58.2",
+    "sharp": "^0.35.4",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@11.25.0"
+}

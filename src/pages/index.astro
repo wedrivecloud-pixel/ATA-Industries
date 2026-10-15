@@ -1,0 +1,17 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import CTA from '../components/CTA.astro';
+import FAQ from '../components/FAQ.astro';
+import {capabilities} from '../data/capabilities';
+---
+<PageLayout title="Precision Manufacturing Solutions" description="Explore proposed metal fabrication and machining processes with ATA Industries. Prepare a clear brief for your next industrial or commercial project.">
+<Hero description="Explore manufacturing capabilities and production solutions designed to support industrial and commercial projects." />
+<div class="process-strip"><div class="wrap">DESIGN INTENT <span>→</span> PROCESS PLANNING <span>→</span> PRODUCTION REQUIREMENTS <span>→</span> QUALITY CONSIDERATIONS</div></div>
+<section class="wrap section split"><div><p class="eyebrow">01 / A considered approach</p><h2>Better outcomes begin<br />with better questions.</h2></div><div><p class="lead">Every component starts with a purpose. Bring the design intent into the manufacturing conversation from day one.</p><p>ATA Industries is developing its manufacturing-focused presence around clear requirements, practical process selection and collaborative project planning.</p><a class="text-link" href="/about/">Meet ATA Industries →</a></div></section>
+<Services topper="02 / Explore the possibilities" heading="Processes with purpose." description="Seven proposed manufacturing areas, from flat profiles to finished assemblies. Availability and technical capability require ATA Industries confirmation." services={capabilities.map(c=>({...c}))} />
+<section class="wrap section"><p class="eyebrow">03 / From brief to build</p><h2>Make the next step a clear one.</h2><div class="steps">{['Define the component','Review the process','Agree the requirements','Plan the next step'].map((t,i)=><article><span class="step-no">0{i+1}</span><h3>{t}</h3><p>{['Share function, drawings, quantity and material requirements.','Discuss geometry, joining, finishing and potential process routes.','Identify critical dimensions, inspection needs and project constraints.','Confirm scope, feasibility and commercial terms before production.'][i]}</p></article>)}</div></section>
+<section class="section surface"><div class="wrap split"><div><p class="eyebrow">04 / Technical conversations</p><h2>Useful answers.<br />Before you enquire.</h2><p>Start with the information that makes a manufacturing brief useful.</p><a class="text-link" href="/faqs/">All project FAQs →</a></div><FAQ /></div></section>
+<CTA />
+</PageLayout>

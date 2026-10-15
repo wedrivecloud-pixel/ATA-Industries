@@ -1,0 +1,19 @@
+---
+import {siteData} from '../data/siteData';import {capabilities} from '../data/capabilities';
+interface Props {quote?:boolean};const {quote=false}=Astro.props;const name=quote?'quote':'contact';
+---
+<div class="note" id="form-status">{siteData.formsEnabled?'Enquiries are processed through the configured hosting form service. Do not include confidential information.':'Preview form — submissions are not connected or sent. Recipient, privacy policy and hosting form service must be approved before activation.'}</div>
+<form name={name} method="POST" action="/enquiry-received/" data-netlify={siteData.formsEnabled?'true':undefined} netlify-honeypot="bot-field" enctype="application/x-www-form-urlencoded" aria-describedby="form-status">
+<input type="hidden" name="form-name" value={name}/><p class="hidden"><label>Leave blank<input name="bot-field" tabindex="-1" autocomplete="off"/></label></p>
+<div class="form-grid">
+{quote?<><label>First name *<input name="first-name" autocomplete="given-name" required maxlength="100"/></label><label>Last name *<input name="last-name" autocomplete="family-name" required maxlength="100"/></label></>:<label class="full">Full name *<input name="full-name" autocomplete="name" required maxlength="200"/></label>}
+<label>Email address *<input name="email" type="email" autocomplete="email" required maxlength="254"/></label><label>Phone number<input name="phone" type="tel" autocomplete="tel" maxlength="40"/></label><label class="full">Company{quote?' name':''}<input name="company" autocomplete="organization" maxlength="200"/></label>
+{quote?<><label class="full">Manufacturing service *<select name="service" id="service" required><option value="">Select a proposed process</option>{capabilities.map(c=><option value={c.slug}>{c.title}</option>)}<option value="not-sure">I’m not sure yet</option></select></label><label class="full">Material requirements<input name="material" maxlength="500"/></label><label>Estimated quantity<input name="quantity" type="number" min="1" step="1"/></label><label>Project timeline<input name="timeline" placeholder="Target date or development stage" maxlength="200"/></label></>:<label class="full">Subject *<input name="subject" required maxlength="200"/></label>}
+<label class="full">{quote?'Project description':'Message'} *<textarea name="message" required minlength="10" maxlength="10000" rows="6"></textarea></label>
+{quote&&<p class="full text-sm">File uploads are not enabled. Describe the drawings available; an approved secure transfer method must be arranged separately.</p>}
+<label class="full consent"><input name="consent" type="checkbox" required value="yes"/><span>I consent to my details being used to respond to this enquiry. Read the <a href="/privacy/">privacy information</a>. *</span></label>
+</div><button class="button" type={siteData.formsEnabled?'submit':'button'} disabled={!siteData.formsEnabled}>{siteData.formsEnabled?'Send enquiry':'Submissions not connected'}</button>
+</form>
+<script>
+ document.addEventListener('astro:page-load',()=>{const field=document.querySelector<HTMLSelectElement>('#service');const value=new URLSearchParams(location.search).get('service');if(field&&value&&Array.from(field.options).some(o=>o.value===value))field.value=value;});
+</script>
