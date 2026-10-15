@@ -1,9 +1,10 @@
-# SEO implementation and launch checks
+# SEO and launch checklist
 
-Implemented: unique branded titles and original descriptions; one H1 per page; semantic sections; canonical and absolute Open Graph URLs; Twitter metadata; local alt-labelled illustration; shared internal links; @astrojs/sitemap XML; astro-robots-txt; Organization and BreadcrumbList JSON-LD; FAQPage only on the visible FAQ page. No LocalBusiness or unverified address, rating or certification schema. Service schema is withheld until service availability is approved.
-
-Default review builds use `noindex,nofollow`. Set PUBLIC_SITE_URL to the approved production origin and rebuild before launch. Set PUBLIC_LAUNCH_APPROVED=true only after factual and legal approvals. Confirm production canonical/sitemap/OG URLs and verify the crawl directive after deployment.
-
-Reference URL mappings remain incomplete because LMI access was blocked; proposed routes and audit limitations are in CONTENT_AUDIT.md. No external redirects are possible or claimed; no legacy ATA URL redirect requirements have been provided. No copied metadata or inherited ranking claims.
-
-Remaining: approved business facts and photos, full source audit, production form/privacy review, measured Lighthouse run, deployed schema validation, webmaster tool registration and production indexability review. No score or deployment is asserted.
+- Unique route titles and relevant descriptions, configurable canonical URLs, Open Graph metadata, Organization JSON-LD, XML sitemap and robots.txt are implemented.
+- `PUBLIC_LAUNCH_APPROVED` behaviour is preserved: `noindex,nofollow` unless explicitly set to `true` at build time.
+- `PUBLIC_SITE_URL` must be the confirmed production HTTPS origin before launch.
+- Source-template links resolve to Astro routes. Unprovided service/industry detail links use the real overview sections or enquiry route, rather than invented detail copy. Unprovided PDF assets remain unavailable.
+- Legal privacy, cookie and sitemap variants have distinct routes and titles.
+- Old `/capabilities/`, `/request-a-quote/`, `/contact/`, `/faqs/`, `/privacy/` and `/enquiry-received/` pages have been removed as requested. No legacy redirect requirements were provided.
+- Placeholder article bodies, policy text and missing photography/downloads require content approval before enabling indexing.
+- No Lighthouse score or deployed Cloudflare verification is claimed. This is a static Worker assets build; live deployment is managed by Cloudflare Workers Builds.

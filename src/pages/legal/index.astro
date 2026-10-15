@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+<BaseLayout title="Legal Information" description="ATA Industries draft privacy information and policy placeholders awaiting legal review.">
+<div class="ata" style="background: #fff">
+  <Header />
+  <main id="main" tabindex="-1">
+    <section style="background: var(--paper); border-bottom: 1px solid var(--steel-200)">
+      <div class="wrap" style="padding-top: 28px; padding-bottom: 48px">
+        <nav aria-label="Breadcrumb"><ol class="crumbs" style="color: var(--steel-600)"><li><a href="/" style="color: var(--steel-600)">Home</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: var(--ink)">Privacy Policy</li></ol></nav>
+        <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 40px">
+          <h1 class="disp h1">Privacy Policy</h1>
+          <p class="mono" style="margin: 0; color: var(--steel-600)">Last updated [Month DD, YYYY]</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top: clamp(40px, 5cqi, 72px); padding-bottom: clamp(64px, 8cqi, 112px)">
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 40px clamp(40px, 6cqi, 96px); align-items: flex-start">
+        <nav aria-label="On this page" style="flex: 0 1 260px; display: flex; flex-direction: column; gap: 4px; border-top: 3px solid var(--ink); padding-top: 16px">
+          <p class="mono" style="margin: 0 0 8px; color: var(--steel-600)">On this page</p>
+          <a href="#s1" style="color: var(--ink); text-decoration: none; padding: 8px 0; font-weight: 600">1. Information we collect</a>
+          <a href="#s2" style="color: var(--steel-700); text-decoration: none; padding: 8px 0">2. How we use it</a>
+          <a href="#s3" style="color: var(--steel-700); text-decoration: none; padding: 8px 0">3. Drawings &amp; CAD files</a>
+          <a href="#s4" style="color: var(--steel-700); text-decoration: none; padding: 8px 0">4. Cookies</a>
+          <a href="#s5" style="color: var(--steel-700); text-decoration: none; padding: 8px 0">5. Contact us</a>
+        </nav>
+        <div style="flex: 1 1 560px; max-width: 760px; display: flex; flex-direction: column; gap: 18px; font-size: 17px; line-height: 1.7">
+          <p class="help" style="font-family: var(--f-mono); font-size: 12px">[Layout for Privacy Policy and Cookie Policy. Policy text to be supplied by legal counsel.]</p>
+          <h2 id="s1" class="disp h3">1. Information we collect</h2>
+          <p class="body">[Policy text]</p>
+          <h2 id="s2" class="disp h3" style="margin-top: 16px">2. How we use it</h2>
+          <p class="body">[Policy text]</p>
+          <h2 id="s3" class="disp h3" style="margin-top: 16px">3. Drawings &amp; CAD files</h2>
+          <p class="body">[How uploaded drawings are stored, who can access them, and how long they are kept.]</p>
+          <h2 id="s4" class="disp h3" style="margin-top: 16px">4. Cookies</h2>
+          <p class="body">[Policy text]</p>
+          <h2 id="s5" class="disp h3" style="margin-top: 16px">5. Contact us</h2>
+          <p class="body">ATA Industries, W352 WI-33, Hartford, WI 53027 · <a href="tel:+12626295527">(262) 629-5527</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SITEMAP VARIANT -->
+    <section aria-labelledby="sm-title" style="background: var(--paper); border-top: 1px solid var(--steel-200); padding-top: clamp(48px, 6cqi, 88px); padding-bottom: clamp(48px, 6cqi, 88px)">
+      <div class="wrap">
+        <p class="eyebrow" style="margin-bottom: 14px">Variant · HTML sitemap page</p>
+        <h2 id="sm-title" class="disp h2" style="margin-bottom: 36px">Sitemap</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 32px">
+          <div><p class="mono" style="margin: 0 0 14px; color: var(--steel-600)">Services</p><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px"><li><a href="/services/">All services</a></li><li><a href="/services/laser-cutting/">Laser Cutting</a></li><li><a href="/services/#forming">Forming</a></li><li><a href="/services/#welding">Welding</a></li><li><a href="/services/#machining">Machining</a></li><li><a href="/services/#assembly">Assembly</a></li><li><a href="/services/#punching">Sheet Metal Punching</a></li><li><a href="/services/#roll-forming">Roll Forming</a></li><li><a href="/services/#panel-bending">Panel Bending</a></li><li><a href="/services/#finishing">Finishing &amp; Powder Coating</a></li></ul></div>
+          <div><p class="mono" style="margin: 0 0 14px; color: var(--steel-600)">Industries</p><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px"><li><a href="/industries/">All industries</a></li><li><a href="/industries/#electrical">Electrical &amp; Power Distribution</a></li><li><a href="/industries/data-centers/">Data Centers</a></li><li><a href="/industries/#food-processing">Food Processing</a></li><li><a href="/industries/#industrial-machinery">Industrial Machinery</a></li><li><a href="/industries/#material-handling">Material Handling &amp; Logistics</a></li><li><a href="/industries/#agriculture">Agriculture</a></li><li><a href="/industries/#oem">OEM</a></li></ul></div>
+          <div><p class="mono" style="margin: 0 0 14px; color: var(--steel-600)">Capabilities</p><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px"><li><a href="/equipment/">Equipment &amp; Technology</a></li><li><a href="/facility/">Facility</a></li><li><a href="/quality/">Quality Assurance</a></li><li><a href="/certifications/">Certifications</a></li></ul></div>
+          <div><p class="mono" style="margin: 0 0 14px; color: var(--steel-600)">Company</p><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px"><li><a href="/about/">About</a></li><li><a href="/careers/">Careers</a></li><li><a href="/blog/">Blog</a></li><li><a href="/service-area/">Service Area</a></li><li><a href="/quote/">Request a Quote</a></li><li><a href="/legal/privacy/">Privacy Policy</a></li><li><a href="/legal/cookies/">Cookie Policy</a></li></ul></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</div>
+</BaseLayout>

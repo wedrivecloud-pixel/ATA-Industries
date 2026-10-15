@@ -1,15 +1,15 @@
-# Required stakeholder approvals before launch
+# Remaining content and production requirements
 
-- Complete the LMI page audit after network access is restored; current structure derives from the brief and does not claim full reference coverage.
-- Confirm each of the seven proposed capabilities, available processes, equipment, materials, tolerances, capacity and inspection arrangements. Public pages explicitly mark these as proposed.
-- Approve company introduction, legal entity, company history, location, team and business coverage. No certifications, awards, customers or years of experience have been invented.
-- Supply ATA Industries email, phone, postal address and hours; centralized fields currently remain empty. No other company's details are reused.
-- Approve the temporary text wordmark and original concept illustration. Supply licensed, process-specific photos and image permission records.
-- Confirm production domain; `ata-industries.example` is a reserved placeholder. Set PUBLIC_SITE_URL at build time.
-- Approve privacy notice, data controller, processors, retention, rights and jurisdiction before enabling collection.
-- Configure Netlify Forms, notifications, spam protection, recipient and end-to-end delivery. Forms are disabled by default. PUBLIC_ENABLE_FORMS=true is a deployment switch, not evidence of backend readiness.
-- Netlify provides hosted processing/spam handling, but this static project has no custom server validation. Add a server/edge endpoint with independent field validation if required for production. Client validation is not a security boundary.
-- File uploads are deliberately unavailable; agree secure transfer and confidentiality terms separately.
-- No pricing, lead times, minimum quantities or delivery guarantees are approved or published.
-- No industries-served or portfolio claims are verified. Add corresponding pages only after audit and stakeholder approval.
-- Set PUBLIC_LAUNCH_APPROVED=true only after approvals and production review. Default noindex protects the stakeholder preview from indexing; robots.txt permits crawling so crawlers can observe that directive.
+The current design source is the user-approved Claude Design export, committed under `design-reference/`. Visible copy, company names, specifications, contact details and claims come from that source; the earlier proposal copy has been replaced. These supplied facts have not been independently verified by this implementation.
+
+- Keep all bracketed text and `.ph` boxes as supplied. Photos, hero video, map image, headshots, testimonials, sample-project/case-study details, registrar/certificate information and policy text still require supplied assets/content.
+- The design's proposed download controls have no real PDF assets. Supply the ISO certificate, capabilities sheet and equipment list before enabling downloads.
+- The export includes one sample BlogPost body. Other article cards now resolve to the same detail layout with an explicit content placeholder, never an invented body or duplicated robotic-welding article.
+- Privacy and cookie policy placeholders require legal approval. The HTML sitemap variant is available separately.
+- No quote/application processing or secure upload backend is included. Both forms remain disabled by default; server validation, file limits/type inspection, malware scanning as appropriate, retention, spam handling and notification/delivery need production implementation and testing.
+- The example quote attachment is a design example, not a real upload. The thank-you route is labelled as a design preview while processing is unavailable.
+- Confirm the deployed HTTPS origin in `PUBLIC_SITE_URL`; keep `PUBLIC_LAUNCH_APPROVED=false` until the production review is complete.
+- Google Fonts requires `fonts.googleapis.com` and `fonts.gstatic.com`. Both destinations were added to the environment draft for review, but a draft save alone does not apply network policy. A blocked font request causes browser fallback; do not describe fallback-font screenshots as verified final typography.
+
+Original LMI audit limitations remain in `CONTENT_AUDIT.md` for historical context. The approved design, rather than the inaccessible source crawl, now controls this rebuild.
+- GitHub access also currently requires applying the saved `github.com` domain addition. The current CONNECT 403 occurs before GitHub authentication; do not replace credentials based on that error.

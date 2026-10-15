@@ -1,333 +1,176 @@
 ---
-import { brand } from "../config/brand";
-import { siteData } from "../data/siteData";
-
-const { nav } = siteData;
-const strip = (p: string) =>
-  p.length > 1 && p.endsWith("/") ? p.slice(0, -1) : p;
-const currentPath = strip(Astro.url.pathname);
+interface Props { active?:string }
+const {active=""}=Astro.props;
 ---
-
-<header
-  class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm"
-  transition:persist
->
-  <div
-    class="mx-auto flex max-w-site items-center justify-between px-4 py-4 sm:px-6"
-  >
-    <!-- Logo -->
-    <div class="flex flex-col gap-2">
-    <a
-      href="/"
-      class="font-heading text-xl font-bold uppercase tracking-wide text-primary transition-opacity hover:opacity-80"
-    >
-      {brand.name}
-    </a>
-      <span class="rounded-full lg:hidden text-xs font-medium">
-        {siteData.license}
-      </span>
+<header class="ata" data-site-header style="position: relative; z-index: 20">
+  <div class="hdr-util">
+    <div class="wrap">
+      <div style="display: flex; gap: 14px; align-items: center">
+        <span class="hide-m">ISO 9001:2015 certified</span>
+        <span class="hide-m" aria-hidden="true" style="color: var(--steel-600)">/</span>
+        <span class="hide-m">AWS D1.1 welding</span>
+        <span class="hide-m" aria-hidden="true" style="color: var(--steel-600)">/</span>
+        <span class="hide-m">60+ years fabricating</span>
+        <span class="show-m">Formerly LMI Manufacturing</span>
       </div>
-
-    <!-- Desktop nav -->
-    <nav
-      class="hidden items-center gap-1 lg:flex"
-      aria-label="Primary navigation"
-    >
-      {
-        nav.map(({ label, href }) => {
-          const isActive =
-            currentPath === href ||
-            (href !== "/" && currentPath.startsWith(href));
-          return (
-            <a
-              href={href}
-              aria-current={isActive ? "page" : undefined}
-              class:list={[
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                isActive
-                  ? "bg-primary/10 text-primary"
-                  : "text-text-muted hover:text-text",
-              ]}
-            >
-              {label}
-            </a>
-          );
-        })
-      }
-    </nav>
-
-    <!-- Desktop CTA + phone -->
-    <div class="hidden items-center gap-4 lg:flex">
-      {
-        siteData.license && (
-          <span class="rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-text-muted">
-            {siteData.license}
-          </span>
-        )
-      }
-
-      <a
-        href="/request-a-quote/"
-        class="inline-flex min-h-11 items-center rounded-md bg-accent px-5 py-2.5 text-sm font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-      >
-        Request a Quote
-      </a>
+      <div class="hide-m" style="display: flex; gap: 8px; align-items: center">
+        <span style="width: 6px; height: 6px; background: var(--arc-on-dark); display: inline-block"></span>
+        <span style="color: var(--on-dark)">Formerly LMI Manufacturing</span>
+      </div>
     </div>
-
-    <!-- Mobile menu button — CSS-only hamburger/X animation -->
-    <button
-      id="menu-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-      class="relative inline-flex min-h-11 min-w-11 items-center justify-center rounded-md text-text-muted hover:bg-surface lg:hidden"
-    >
-      <span class="sr-only">Toggle menu</span>
-      <span class="hamburger-box" aria-hidden="true">
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-      </span>
-    </button>
+  </div>
+  <div class="hdr-bar">
+    <div class="wrap">
+      <a href="/" class="logo" aria-label="ATA Industries home"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#14181C"></rect><path d="M8.5 28.5 18 7.5l9.5 21" fill="none" stroke="#FFFFFF" stroke-width="3.4"></path><path d="M12.2 21.5h11.6" stroke="#C2410C" stroke-width="3.4"></path></svg><span class="logo-word"><b>ATA</b><i>Industries</i></span></a>
+      <nav class="nav hide-t" aria-label="Primary">
+        <button type="button" class:list={["nav-item",{"is-active":active==="services"}]} aria-expanded="false" data-menu-trigger="services" aria-controls="menu-services">Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <button type="button" class:list={["nav-item",{"is-active":active==="industries"}]} aria-expanded="false" data-menu-trigger="industries" aria-controls="menu-industries">Industries <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <button type="button" class:list={["nav-item",{"is-active":active==="capabilities"}]} aria-expanded="false" data-menu-trigger="capabilities" aria-controls="menu-capabilities">Capabilities <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <button type="button" class:list={["nav-item",{"is-active":active==="about"}]} aria-expanded="false" data-menu-trigger="about" aria-controls="menu-about">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <a class:list={["nav-item",{"is-active":active==="contact"}]} href="/quote/">Contact</a>
+      </nav>
+      <div style="display: flex; gap: 14px; align-items: center; margin-left: auto">
+        <a class="hide-t" href="tel:+12626295527" style="font-weight: 600; font-size: 15px; color: var(--ink); text-decoration: none; display: inline-flex; gap: 8px; align-items: center; min-height: 44px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>(262) 629-5527</a>
+        <a class="btn btn-primary btn-sm hide-m" href="/quote/">Request a Quote</a>
+        <a class="icon-btn show-m" href="tel:+12626295527" aria-label="Call (262) 629-5527"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg></a>
+        <button type="button" class="icon-btn show-t" aria-label="Open menu" aria-expanded="false" data-mobile-trigger aria-controls="mobile-menu">
+          <div hidden data-mobile-open><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+          <div data-mobile-closed><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></div>
+        </button>
+      </div>
+    </div>
   </div>
 
-  <!-- Mobile drawer -->
-  <div
-    id="mobile-menu"
-    class="mobile-drawer"
-    inert
-  >
-    <div class="border-t border-border bg-background">
-      <nav class="flex flex-col gap-1" aria-label="Mobile navigation">
-        {
-          nav.map(({ label, href }) => {
-            const isActive =
-              currentPath === href ||
-              (href !== "/" && currentPath.startsWith(href));
-            return (
-              <a
-                href={href}
-                class:list={[
-                  "rounded-md px-3 py-3 text-base font-medium transition-colors",
-                  isActive
-                    ? "bg-primary/10 text-primary"
-                    : "text-text-muted hover:text-text hover:bg-surface",
-                ]}
-              >
-                {label}
-              </a>
-            );
-          })
-        }
-      </nav>
-
-      <div class="mt-4 flex flex-col gap-3 border-t border-border pt-4 pb-6">
-
-        <a
-          href="/request-a-quote/"
-          class="flex min-h-11 items-center justify-center rounded-md bg-accent px-5 py-3 mx-3 text-base font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90"
-        >
-          Request a Quote
-        </a>
-
+  <div hidden data-menu-panel="services" id="menu-services">
+    <div class="mega hide-t">
+      <div class="wrap" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 380px; gap: 40px; padding-top: 36px; padding-bottom: 40px">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Core fabrication</p>
+          <a class="mega-link" href="/services/laser-cutting/"><b>Laser Cutting</b><span>6kW fiber laser, sheets up to 79″ × 158″</span></a>
+          <a class="mega-link" href="/quote/"><b>Forming</b><span>Press brakes from 28 to 350 tons</span></a>
+          <a class="mega-link" href="/quote/"><b>Welding</b><span>AWS-qualified manual and robotic, up to 1″</span></a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px; visibility: hidden" aria-hidden="true">Core</p>
+          <a class="mega-link" href="/quote/"><b>Machining</b><span>HAAS and Milltronics CNC mills and lathe</span></a>
+          <a class="mega-link" href="/quote/"><b>Assembly</b><span>Sub-assemblies to finished units</span></a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Ancillary services</p>
+          <a class="mega-link" href="/services/#punching"><b>Sheet Metal Punching</b></a>
+          <a class="mega-link" href="/services/#roll-forming"><b>Roll Forming</b></a>
+          <a class="mega-link" href="/services/#panel-bending"><b>Panel Bending</b></a>
+          <a class="mega-link" href="/services/#finishing"><b>Finishing &amp; Powder Coating</b></a>
+        </div>
+        <div style="background: var(--mill); color: var(--on-dark); padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <p class="mono" style="margin: 0; color: var(--arc-on-dark)">Quotes in 24–48 hours</p>
+          <p class="disp h4" style="color: #fff; font-size: 26px">Send your SolidWorks or CAD files.</p>
+          <p class="small" style="margin: 0; color: var(--on-dark-2)">Tell us quantity, material and when you need parts. We'll come back with pricing within 24–48 hours.</p>
+          <a class="btn btn-primary btn-sm" href="/quote/" style="align-self: flex-start; margin-top: 6px">Request a Quote</a>
+        </div>
       </div>
+      <div style="border-top: 1px solid var(--steel-200)">
+        <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; min-height: 56px; gap: 24px">
+          <span class="small" style="color: var(--steel-600)">Laser cutting, forming, welding, machining and assembly — all under one roof.</span>
+          <a class="link-arrow" href="/services/" style="font-size: 15px">All services <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div hidden data-menu-panel="industries" id="menu-industries">
+    <div class="mega hide-t">
+      <div class="wrap" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) 380px; gap: 40px; padding-top: 36px; padding-bottom: 40px">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Industries served</p>
+          <a class="mega-link" href="/industries/#electrical"><b>Electrical &amp; Power Distribution</b></a>
+          <a class="mega-link" href="/industries/data-centers/"><b>Data Centers</b></a>
+          <a class="mega-link" href="/industries/#food-processing"><b>Food Processing</b></a>
+          <a class="mega-link" href="/industries/#industrial-machinery"><b>Industrial Machinery</b></a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px; visibility: hidden" aria-hidden="true">More</p>
+          <a class="mega-link" href="/industries/#material-handling"><b>Material Handling &amp; Logistics</b></a>
+          <a class="mega-link" href="/industries/#agriculture"><b>Agriculture</b></a>
+          <a class="mega-link" href="/industries/#oem"><b>OEM</b></a>
+          <a class="mega-link" href="/industries/"><b>All industries →</b></a>
+        </div>
+        <div style="background: var(--paper); padding: 28px; display: flex; flex-direction: column; gap: 14px; border-top: 3px solid var(--ink)">
+          <p class="mono" style="margin: 0; color: var(--steel-600)">Our parts run in systems used by</p>
+          <p class="disp h4" style="font-size: 24px">Walmart, Coca-Cola, Amazon, McDonald's and Folgers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div hidden data-menu-panel="capabilities" id="menu-capabilities">
+    <div class="mega hide-t">
+      <div class="wrap" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) 380px; gap: 40px; padding-top: 36px; padding-bottom: 40px">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Capabilities</p>
+          <a class="mega-link" href="/equipment/"><b>Equipment &amp; Technology</b><span>Full spec sheets for every machine</span></a>
+          <a class="mega-link" href="/facility/"><b>Facility</b><span>40,000 sq ft in Hartford, Wisconsin</span></a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Quality</p>
+          <a class="mega-link" href="/quality/"><b>Quality Assurance</b><span>Traceability, QT9, OEM audits welcome</span></a>
+          <a class="mega-link" href="/certifications/"><b>Certifications &amp; Qualifications</b><span>ISO 9001:2015 · AWS D1.1</span></a>
+        </div>
+        <div style="background: var(--mill); color: var(--on-dark); padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <p class="mono" style="margin: 0; color: var(--arc-on-dark)">Laser repeatability</p>
+          <p class="disp" style="font-size: 44px; color: #fff">0.0004″</p>
+          <p class="small" style="margin: 0; color: var(--on-dark-2)">6kW fiber laser, 158″ × 79″ max sheet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div hidden data-menu-panel="about" id="menu-about">
+    <div class="mega hide-t">
+      <div class="wrap" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) 380px; gap: 40px; padding-top: 36px; padding-bottom: 40px">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Company</p>
+          <a class="mega-link" href="/about/"><b>About ATA Industries</b><span>Our story since 1960, leadership, values</span></a>
+          <a class="mega-link" href="/careers/"><b>Careers</b><span>Welders, operators, machinists and more</span></a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p class="eyebrow" style="margin-bottom: 10px">Resources</p>
+          <a class="mega-link" href="/blog/"><b>Fabrication Insights</b><span>News, market insights, technology</span></a>
+          <a class="mega-link" href="/service-area/"><b>Service Area</b><span>Wisconsin, the Midwest and nationwide</span></a>
+        </div>
+        <div style="background: var(--paper); padding: 28px; display: flex; flex-direction: column; gap: 12px; border-top: 3px solid var(--ink)">
+          <p class="mono" style="margin: 0; color: var(--steel-600)">New name, same team</p>
+          <p class="disp h4" style="font-size: 24px">LMI Manufacturing is now ATA Industries.</p>
+          <a class="link-arrow" href="/about/" style="align-self: flex-start; font-size: 15px">Read the story <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div hidden data-mobile-open id="mobile-menu">
+    <div class="show-t" style="background: #fff; border-bottom: 1px solid var(--steel-200)">
+      <nav class="wrap" aria-label="Mobile" style="display: flex; flex-direction: column; padding-top: 8px; padding-bottom: 28px">
+        <a class="mrow" href="/services/" style="border-top: 0">Services <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></a>
+        <div style="display: flex; flex-direction: column; padding: 0 0 12px 16px; border-left: 2px solid var(--steel-200); margin-bottom: 8px">
+          <a href="/services/laser-cutting/" style="color: var(--steel-700); text-decoration: none; padding: 10px 0; font-size: 16px">Laser Cutting</a>
+          <a href="/services/#forming" style="color: var(--steel-700); text-decoration: none; padding: 10px 0; font-size: 16px">Forming</a>
+          <a href="/services/#welding" style="color: var(--steel-700); text-decoration: none; padding: 10px 0; font-size: 16px">Welding</a>
+          <a href="/services/#machining" style="color: var(--steel-700); text-decoration: none; padding: 10px 0; font-size: 16px">Machining</a>
+          <a href="/services/#assembly" style="color: var(--steel-700); text-decoration: none; padding: 10px 0; font-size: 16px">Assembly</a>
+          <a href="/services/" style="color: var(--ink); font-weight: 600; text-decoration: none; padding: 10px 0; font-size: 16px">All services →</a>
+        </div>
+        <a class="mrow" href="/industries/">Industries <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+        <a class="mrow" href="/equipment/">Capabilities <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+        <a class="mrow" href="/about/">About <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+        <a class="mrow" href="/careers/">Careers</a>
+        <a class="mrow" href="/blog/">Blog</a>
+        <a class="mrow" href="/quote/" style="border-bottom: 1px solid var(--steel-100)">Contact</a>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 24px">
+          <a class="btn btn-primary" href="/quote/">Request a Quote</a>
+          <a class="btn btn-secondary" href="tel:+12626295527">Call (262) 629-5527</a>
+        </div>
+        <p class="mono" style="margin: 20px 0 0; color: var(--steel-600); text-align: center">Quotes in 24–48 hrs · ISO 9001:2015</p>
+      </nav>
     </div>
   </div>
 </header>
-
-<style>
-  /* ── Hamburger bars ─────────────────────────────────────────────────────── */
-  .hamburger-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 22px;
-    height: 22px;
-  }
-  .hamburger-bar {
-    display: block;
-    width: 100%;
-    height: 2px;
-    border-radius: 9999px;
-    background-color: currentColor;
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
-    transform-origin: center;
-  }
-
-  /* Open state — morph to X */
-  [aria-expanded="true"] .hamburger-bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  [aria-expanded="true"] .hamburger-bar:nth-child(2) {
-    opacity: 0;
-  }
-  [aria-expanded="true"] .hamburger-bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
-  /* ── Mobile drawer slide-down ───────────────────────────────────────────── */
-  .mobile-drawer {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease;
-  }
-  .mobile-drawer.is-open {
-    grid-template-rows: 1fr;
-  }
-  .mobile-drawer > div {
-    min-height: 0;
-    overflow: hidden;
-  }
-
-  /* Scoped display:grid overrides Tailwind's lg:hidden (layer conflict),
-     so we handle the desktop breakpoint here directly. */
-  @media (min-width: 1024px) {
-    .mobile-drawer {
-      display: none;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .hamburger-bar,
-    .mobile-drawer {
-      transition-duration: 0.01ms !important;
-    }
-  }
-</style>
-
-<script>
-  function initHeader() {
-    const header = document.querySelector("header") as HTMLElement;
-    const btn = document.getElementById("menu-toggle") as HTMLButtonElement;
-    const menu = document.getElementById("mobile-menu") as HTMLElement;
-    if (!header || !btn || !menu) return;
-
-    // Prevent duplicate listeners when transition:persist keeps the DOM
-    if (header.dataset.headerInit === "true") return;
-    header.dataset.headerInit = "true";
-
-    const ACTIVE = ["bg-primary/10", "text-primary"];
-    const INACTIVE_DT = ["text-text-muted", "hover:text-text"];
-    const INACTIVE_MB = ["text-text-muted", "hover:text-text", "hover:bg-surface"];
-    const isDesktop = () => window.matchMedia("(min-width: 1024px)").matches;
-    const strip = (p: string) => (p.length > 1 && p.endsWith("/") ? p.slice(0, -1) : p);
-
-    let focusableEls: HTMLElement[] = [];
-
-    function getFocusable(): HTMLElement[] {
-      return Array.from(
-        menu.querySelectorAll<HTMLElement>(
-          'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
-        )
-      );
-    }
-
-    function trapFocus(e: KeyboardEvent) {
-      if (e.key !== "Tab") return;
-      const els = focusableEls;
-      if (els.length === 0) return;
-      const first = els[0];
-      const last = els[els.length - 1];
-      if (e.shiftKey) {
-        if (document.activeElement === first || document.activeElement === btn) {
-          e.preventDefault();
-          last.focus();
-        }
-      } else if (document.activeElement === last) {
-        e.preventDefault();
-        btn.focus();
-      }
-    }
-
-    function setMenuOpen(open: boolean) {
-      if (isDesktop()) open = false;
-      btn.setAttribute("aria-expanded", String(open));
-      menu.toggleAttribute("inert", !open);
-      menu.classList.toggle("is-open", open);
-      document.body.classList.toggle("overflow-hidden", open);
-
-      if (open) {
-        focusableEls = getFocusable();
-        document.addEventListener("keydown", trapFocus);
-      } else {
-        document.removeEventListener("keydown", trapFocus);
-      }
-    }
-
-    function syncActiveLinks() {
-      const path = strip(window.location.pathname);
-      const dtLinks = header.querySelectorAll('nav[aria-label="Primary navigation"] a');
-      const mbLinks = header.querySelectorAll("#mobile-menu nav a");
-
-      dtLinks.forEach((link) => {
-        const href = strip(link.getAttribute("href") || "");
-        const active = href === path || (href !== "/" && path.startsWith(href));
-        link.classList.toggle(ACTIVE[0], active);
-        link.classList.toggle(ACTIVE[1], active);
-        link.classList.toggle(INACTIVE_DT[0], !active);
-        link.classList.toggle(INACTIVE_DT[1], !active);
-        if (active) link.setAttribute("aria-current", "page");
-        else link.removeAttribute("aria-current");
-      });
-
-      mbLinks.forEach((link) => {
-        const href = strip(link.getAttribute("href") || "");
-        const active = href === path || (href !== "/" && path.startsWith(href));
-        link.classList.toggle(ACTIVE[0], active);
-        link.classList.toggle(ACTIVE[1], active);
-        link.classList.toggle(INACTIVE_MB[0], !active);
-        link.classList.toggle(INACTIVE_MB[1], !active);
-        link.classList.toggle(INACTIVE_MB[2], !active);
-        if (active) link.setAttribute("aria-current", "page");
-        else link.removeAttribute("aria-current");
-      });
-    }
-
-    // ── Event listeners (bound once) ──────────────────────────────
-
-    // Toggle menu
-    btn.addEventListener("click", () => {
-      if (isDesktop()) return;
-      setMenuOpen(btn.getAttribute("aria-expanded") !== "true");
-    });
-
-    // Close on link click inside drawer
-    menu.addEventListener("click", (e) => {
-      if ((e.target as Element).closest?.("a[href]")) setMenuOpen(false);
-    });
-
-    // Escape closes drawer
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true") {
-        setMenuOpen(false);
-        btn.focus();
-      }
-    });
-
-    // Resize to desktop closes drawer
-    window.addEventListener("resize", () => {
-      if (isDesktop() && btn.getAttribute("aria-expanded") === "true") {
-        setMenuOpen(false);
-      }
-    });
-
-    // ── View Transitions: reset menu & sync active links ──────────
-    // Registered once — persists across navigations because the
-    // header DOM (and therefore this closure) survives transition:persist.
-    document.addEventListener("astro:after-swap", () => {
-      setMenuOpen(false);
-      syncActiveLinks();
-    });
-
-    // Initial state
-    setMenuOpen(false);
-    syncActiveLinks();
-  }
-
-  // astro:page-load fires on first load AND after each transition.
-  // The init guard above ensures listeners only bind once.
-  document.addEventListener("astro:page-load", initHeader);
-</script>

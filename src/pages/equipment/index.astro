@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import {designData} from "../../data/Equipment";
+const {groups}=designData;
+---
+<BaseLayout title="Equipment and technology" description="Review technical specifications for ATA Industries laser, punch, forming, welding, machining and finishing equipment.">
+<div class="ata" style="background: #fff">
+  <Header active="capabilities" />
+  <main id="main" tabindex="-1">
+    <section aria-labelledby="eq-title" style="background: var(--paper); border-bottom: 1px solid var(--steel-200)">
+      <div class="wrap" style="padding-top: 28px; padding-bottom: clamp(40px, 5cqi, 72px)">
+        <nav aria-label="Breadcrumb"><ol class="crumbs" style="color: var(--steel-600)"><li><a href="/" style="color: var(--steel-600)">Home</a></li><li aria-hidden="true">/</li><li><a href="/equipment/" style="color: var(--steel-600)">Capabilities</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: var(--ink)">Equipment &amp; Technology</li></ol></nav>
+        <div style="display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-end; justify-content: space-between; padding-top: clamp(32px, 4cqi, 56px)">
+          <div style="max-width: 780px; display: flex; flex-direction: column; gap: 22px">
+            <p class="eyebrow">Equipment &amp; technology</p>
+            <h1 id="eq-title" class="disp h1">Technical specifications, machine by machine.</h1>
+            <p class="lead">Check sheet sizes, tonnages and travels before you send a drawing. If your part is near a limit, call us and we'll talk it through.</p>
+          </div>
+          <div class="stack-m" style="display: flex; flex-wrap: wrap; gap: 12px">
+            <a class="btn btn-primary" href="/quote/">Request a Quote</a>
+            <a class="btn btn-secondary" href="#" aria-disabled="true" data-unavailable title="[Document to be supplied]">Equipment list (PDF)</a>
+          </div>
+        </div>
+        <nav aria-label="Equipment categories" data-equipment-tabs style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px">
+          <a class="chip" data-equipment-tab href="#cutting">Cutting &amp; punching</a>
+          <a class="chip" data-equipment-tab href="#forming">Forming</a>
+          <a class="chip" data-equipment-tab href="#machining">Machining &amp; turning</a>
+          <a class="chip" data-equipment-tab href="#welding">Welding</a>
+          <a class="chip" data-equipment-tab href="#finishing">Finishing</a>
+        </nav>
+      </div>
+    </section>
+
+    {groups.map((g) => ( <Fragment>
+      <section class="sec" id={g.id} style="border-bottom: 1px solid var(--steel-200); padding-top: clamp(56px, 6cqi, 96px); padding-bottom: clamp(56px, 6cqi, 96px)">
+        <div class="wrap">
+          <div class="sec-head" style="margin-bottom: 32px">
+            <div>
+              <p class="eyebrow">{g.eyebrow}</p>
+              <h2 class="disp h2">{g.title}</h2>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(520px, 100%), 1fr)); gap: 24px">
+            {g.machines.map((m) => ( <Fragment>
+              <article style="border: 1px solid var(--steel-200); display: flex; flex-direction: column">
+                <div style="display: flex; flex-wrap: wrap; gap: 0">
+                  <div class="ph" style="flex: 1 1 200px; min-height: 180px">{m.photo}</div>
+                  <div style="flex: 1.4 1 260px; padding: 24px; display: flex; flex-direction: column; gap: 8px; justify-content: center">
+                    <p class="mono" style="margin: 0; color: var(--arc)">{m.kind}</p>
+                    <h3 class="disp h3">{m.name}</h3>
+                    <p class="body small">{m.blurb}</p>
+                  </div>
+                </div>
+                <div style="padding: 4px 24px 20px; overflow-x: auto">
+                  <table class="spec-table">
+                    <tbody>
+                      {m.rows.map((r) => ( <Fragment>
+                        <tr><th scope="row" style="padding-top: 12px; padding-bottom: 12px">{r.k}</th><td style="padding-top: 12px; padding-bottom: 12px; font-family: var(--f-mono); font-size: 14px">{r.v}</td></tr>
+                      </Fragment> ))}
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+            </Fragment> ))}
+          </div>
+        </div>
+      </section>
+    </Fragment> ))}
+  </main>
+  <CtaBand />
+  <Footer />
+</div>
+</BaseLayout>

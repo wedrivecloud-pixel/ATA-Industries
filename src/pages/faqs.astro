@@ -1,4 +1,0 @@
----
-import PageLayout from '../layouts/PageLayout.astro';import FAQ from '../components/FAQ.astro';import CTA from '../components/CTA.astro';import {faqs} from '../data/faqs';
----
-<PageLayout title="Manufacturing FAQs" description="Prepare your manufacturing enquiry with practical answers about drawings, quantities, materials, process selection and project requirements." schema={{'@type':'FAQPage',mainEntity:faqs.map(f=>({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))}}><section class="wrap section"><p class="eyebrow">Project preparation</p><h1>Good questions.<br />Clearer requirements.</h1><p class="lead narrow">General guidance for planning a manufacturing enquiry. Project-specific commitments require confirmation.</p><FAQ /></section><CTA /></PageLayout>

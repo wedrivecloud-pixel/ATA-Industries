@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CtaBand from "../../components/CtaBand.astro";
+---
+<BaseLayout title="Quality assurance" description="Explore ATA Industries quality systems, traceability, inspection, welding oversight and documentation.">
+<div class="ata" style="background: #fff">
+  <Header active="capabilities" />
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section aria-labelledby="qa-title" style="background: var(--mill); color: #fff">
+      <div class="wrap" style="padding-top: 28px; padding-bottom: clamp(56px, 6cqi, 96px)">
+        <nav aria-label="Breadcrumb"><ol class="crumbs" style="color: var(--on-dark-2)"><li><a href="/" style="color: var(--on-dark-2)">Home</a></li><li aria-hidden="true">/</li><li><a href="/equipment/" style="color: var(--on-dark-2)">Capabilities</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: #fff">Quality Assurance</li></ol></nav>
+        <div style="display: flex; flex-wrap: wrap; gap: 48px clamp(40px, 6cqi, 96px); align-items: flex-end; padding-top: clamp(40px, 5cqi, 80px)">
+          <div style="flex: 1.4 1 520px; display: flex; flex-direction: column; gap: 22px">
+            <p class="eyebrow" style="color: var(--arc-on-dark)">Quality assurance</p>
+            <h1 id="qa-title" class="disp h1" style="color: #fff">Quality systems built for OEM demands.</h1>
+            <p class="lead" style="color: var(--on-dark-2)">Documented work instructions, full material traceability and AWS-certified welding, all tracked in our ISO 9001:2015 quality management system. OEM customers are welcome to audit us directly.</p>
+            <div class="stack-m" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+              <a class="btn btn-primary" href="/quote/">Request a Quote</a>
+              <a class="btn btn-ghost-dark" href="#" aria-disabled="true" data-unavailable title="[Document to be supplied]">Download ISO certificate (PDF)</a>
+            </div>
+          </div>
+          <div style="flex: 1 1 340px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+            <div style="border: 1.5px solid var(--on-dark); padding: 20px; display: flex; flex-direction: column; gap: 6px"><span class="disp" style="font-size: 30px; color: #fff">ISO 9001</span><span class="mono" style="color: var(--on-dark-2)">2015 certified</span></div>
+            <div style="border: 1.5px solid var(--on-dark); padding: 20px; display: flex; flex-direction: column; gap: 6px"><span class="disp" style="font-size: 30px; color: #fff">AWS D1.1</span><span class="mono" style="color: var(--on-dark-2)">Structural welding</span></div>
+            <div style="border: 1px solid var(--mill-line); padding: 20px; display: flex; flex-direction: column; gap: 6px"><span class="disp" style="font-size: 30px; color: #fff">QT9</span><span class="mono" style="color: var(--on-dark-2)">Quality software</span></div>
+            <div style="border: 1px solid var(--mill-line); padding: 20px; display: flex; flex-direction: column; gap: 6px"><span class="disp" style="font-size: 30px; color: #fff">±0.2 mm</span><span class="mono" style="color: var(--on-dark-2)">Robotic welds*</span></div>
+          </div>
+        </div>
+        <p class="small" style="margin: 20px 0 0; color: var(--on-dark-2); text-align: right">*Achievable in some cases with robotic welding.</p>
+      </div>
+    </section>
+
+    <!-- TRACEABILITY FLOW -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">Part traceability</p>
+            <h2 class="disp h2">Every part tracked from raw stock to finished assembly.</h2>
+          </div>
+          <p class="body" style="max-width: 440px">Our Part Tracking ID System ties each part to its heat lot and every operation it passes through.</p>
+        </div>
+        <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px">
+          <li style="border: 1px solid var(--steel-300); padding: 22px; display: flex; flex-direction: column; gap: 10px; position: relative"><span class="step-num">01</span><b>Raw material in</b><span class="body small">Supplier verified. Heat certification and lot recorded.</span></li>
+          <li style="border: 1px solid var(--steel-300); padding: 22px; display: flex; flex-direction: column; gap: 10px"><span class="step-num">02</span><b>Part Tracking ID</b><span class="body small">Each part gets an ID that follows it through the shop.</span></li>
+          <li style="border: 1px solid var(--steel-300); padding: 22px; display: flex; flex-direction: column; gap: 10px"><span class="step-num">03</span><b>Documented operations</b><span class="body small">Complex weldments follow written work instructions with backup plans.</span></li>
+          <li style="border: 1px solid var(--steel-300); padding: 22px; display: flex; flex-direction: column; gap: 10px"><span class="step-num">04</span><b>Inspection</b><span class="body small">Visual and dimensional checks on finished and coated parts.</span></li>
+          <li style="border: 1px solid var(--ink); background: var(--ink); color: #fff; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span class="step-num" style="background: var(--arc)">05</span><b>Ship with records</b><span class="small" style="color: var(--on-dark-2)">Heat certs and lot traceability available on request.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- HOW WE DELIVER -->
+    <section class="sec" style="background: var(--paper)">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">How we deliver quality in every part</p>
+            <h2 class="disp h2">Systems, not luck.</h2>
+          </div>
+        </div>
+        <div class="g3" style="gap: 40px 32px">
+          <div style="display: flex; flex-direction: column; gap: 10px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Documented work instructions</h3><p class="body small">Complex weldments and assemblies follow written instructions, with production backup plans.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 10px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Corrective action tracking</h3><p class="body small">Issues are documented and resolved in QT9, our quality management software.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 10px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Supplier verification</h3><p class="body small">Heat certifications and lot traceability managed for every raw material.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 10px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Welding oversight</h3><p class="body small">A third-party welding engineer reviews our WPS and WPQ documents.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 10px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Annual calibration</h3><p class="body small">Welding machines and inspection tools are calibrated annually and verified by manufacturers.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 10px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Capacity planning</h3><p class="body small">Scheduling, resources and output managed to protect on-time delivery.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROBOTIC -->
+    <section class="sec">
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 40px clamp(40px, 6cqi, 96px); align-items: center">
+        <div class="ph" style="flex: 1 1 440px; aspect-ratio: 4 / 3">[Photo: Cooper Cobot mid-weld]</div>
+        <div style="flex: 1 1 440px; display: flex; flex-direction: column; gap: 20px">
+          <p class="eyebrow">Robotic welding</p>
+          <h2 class="disp h2">Consistency you can measure.</h2>
+          <p class="body">Robotic arms reduce variability from part to part and improve bead consistency, holding tighter tolerances (within ±0.2 mm in some cases) on repeat production.</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--steel-200)">
+            <li style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--steel-200)"><span>Bead consistency</span><span class="mono" style="color: var(--steel-700)">Repeatable</span></li>
+            <li style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--steel-200)"><span>Weld code</span><span class="mono" style="color: var(--steel-700)">AWS D1.1</span></li>
+            <li style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--steel-200)"><span>Manual welding qualification</span><span class="mono" style="color: var(--steel-700)">Up to 1″ with WPSs</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENDORS + AUDIT -->
+    <section class="sec" style="background: var(--mill-2); color: var(--on-dark)">
+      <div class="wrap">
+        <div class="g2" style="gap: 48px clamp(40px, 6cqi, 96px)">
+          <div style="display: flex; flex-direction: column; gap: 18px">
+            <p class="eyebrow" style="color: var(--arc-on-dark)">Monitoring third-party vendors</p>
+            <h2 class="disp h3" style="color: #fff">Outsourced finishing, held to our standard.</h2>
+            <p class="body" style="color: var(--on-dark-2)">Polishing, painting and powder coating partners are scheduled, in daily contact and inspected. We visually and dimensionally inspect every coated part before it ships to you.</p>
+          </div>
+          <div style="border: 1.5px solid var(--on-dark); padding: clamp(28px, 3cqi, 40px); display: flex; flex-direction: column; gap: 18px">
+            <p class="eyebrow" style="color: var(--arc-on-dark)">OEM audits welcome</p>
+            <h2 class="disp h3" style="color: #fff">Come see our systems for yourself.</h2>
+            <p class="body" style="color: var(--on-dark-2)">We invite OEM customers to audit our quality system, records and shop floor directly.</p>
+            <a class="btn btn-primary" href="/quote/" style="align-self: flex-start">Schedule an audit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECORDS -->
+    <section class="sec">
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 40px clamp(40px, 6cqi, 96px)">
+        <div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 18px">
+          <p class="eyebrow">Documentation</p>
+          <h2 class="disp h2">Records you can request with your order.</h2>
+          <a class="link-arrow" href="/certifications/" style="align-self: flex-start">Certifications &amp; qualifications <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+        </div>
+        <ul style="flex: 1.4 1 520px; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 12px">
+          <li style="display: flex; gap: 14px; align-items: center; border: 1px solid var(--steel-200); padding: 18px"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none"><rect width="22" height="22" fill="#14181C"></rect><path d="M6 11.5l3.2 3.2L16 8" fill="none" stroke="#fff" stroke-width="2"></path></svg><b>Heat certifications</b></li>
+          <li style="display: flex; gap: 14px; align-items: center; border: 1px solid var(--steel-200); padding: 18px"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none"><rect width="22" height="22" fill="#14181C"></rect><path d="M6 11.5l3.2 3.2L16 8" fill="none" stroke="#fff" stroke-width="2"></path></svg><b>Lot traceability records</b></li>
+          <li style="display: flex; gap: 14px; align-items: center; border: 1px solid var(--steel-200); padding: 18px"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none"><rect width="22" height="22" fill="#14181C"></rect><path d="M6 11.5l3.2 3.2L16 8" fill="none" stroke="#fff" stroke-width="2"></path></svg><b>WPS &amp; WPQ documentation</b></li>
+          <li style="display: flex; gap: 14px; align-items: center; border: 1px solid var(--steel-200); padding: 18px"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none"><rect width="22" height="22" fill="#14181C"></rect><path d="M6 11.5l3.2 3.2L16 8" fill="none" stroke="#fff" stroke-width="2"></path></svg><b>ISO 9001:2015 certificate</b></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <CtaBand />
+  <Footer />
+</div>
+</BaseLayout>

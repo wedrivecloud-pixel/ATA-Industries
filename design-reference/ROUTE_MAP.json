@@ -1,0 +1,92 @@
+[
+  {
+    "template": "Home",
+    "route": "/",
+    "file": "src/pages/index.astro"
+  },
+  {
+    "template": "Services",
+    "route": "/services/",
+    "file": "src/pages/services/index.astro"
+  },
+  {
+    "template": "Service-Laser",
+    "route": "/services/laser-cutting/",
+    "file": "src/pages/services/laser-cutting/index.astro"
+  },
+  {
+    "template": "Industries",
+    "route": "/industries/",
+    "file": "src/pages/industries/index.astro"
+  },
+  {
+    "template": "Industry-DataCenters",
+    "route": "/industries/data-centers/",
+    "file": "src/pages/industries/data-centers/index.astro"
+  },
+  {
+    "template": "About",
+    "route": "/about/",
+    "file": "src/pages/about/index.astro"
+  },
+  {
+    "template": "Facility",
+    "route": "/facility/",
+    "file": "src/pages/facility/index.astro"
+  },
+  {
+    "template": "Equipment",
+    "route": "/equipment/",
+    "file": "src/pages/equipment/index.astro"
+  },
+  {
+    "template": "Quality",
+    "route": "/quality/",
+    "file": "src/pages/quality/index.astro"
+  },
+  {
+    "template": "Certifications",
+    "route": "/certifications/",
+    "file": "src/pages/certifications/index.astro"
+  },
+  {
+    "template": "Careers",
+    "route": "/careers/",
+    "file": "src/pages/careers/index.astro"
+  },
+  {
+    "template": "Blog",
+    "route": "/blog/",
+    "file": "src/pages/blog/index.astro"
+  },
+  {
+    "template": "BlogPost",
+    "route": "/blog/the-role-of-robotic-welding-in-modern-fabrication/",
+    "file": "src/pages/blog/[post].astro"
+  },
+  {
+    "template": "ServiceArea",
+    "route": "/service-area/",
+    "file": "src/pages/service-area/index.astro"
+  },
+  {
+    "template": "Legal",
+    "route": "/legal/",
+    "file": "src/pages/legal/index.astro"
+  },
+  {
+    "template": "Quote",
+    "route": "/quote/",
+    "file": "src/pages/quote/index.astro"
+  },
+  {
+    "template": "ThankYou",
+    "route": "/quote/thank-you/",
+    "file": "src/pages/quote/thank-you/index.astro"
+  },
+  {
+    "template": "NotFound",
+    "route": "/404.html",
+    "file": "src/pages/404.astro"
+  }
+]

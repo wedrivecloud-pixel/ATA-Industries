@@ -1,3 +1,5 @@
+> Historical initial-build audit. Superseded for design/content implementation by the approved `design-reference/` export. Current routes are listed in `design-reference/ROUTE_MAP.json` and the README.
+
 # Reference content audit
 
 Audit date: 15 October 2026. **Incomplete: network access blocked.**

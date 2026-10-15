@@ -1,0 +1,169 @@
+<script>
+  // All pages are static. Only navigation and form controls need browser state.
+  const header = document.querySelector<HTMLElement>('[data-site-header]');
+  if (header) {
+    const triggers = Array.from(header.querySelectorAll<HTMLButtonElement>('[data-menu-trigger]'));
+    const panels = Array.from(header.querySelectorAll<HTMLElement>('[data-menu-panel]'));
+    const mobileTrigger = header.querySelector<HTMLButtonElement>('[data-mobile-trigger]');
+    const mobileOpen = Array.from(header.querySelectorAll<HTMLElement>('[data-mobile-open]'));
+    const mobileClosed = Array.from(header.querySelectorAll<HTMLElement>('[data-mobile-closed]'));
+    const closeDesktop = () => {
+      triggers.forEach(button => { button.setAttribute('aria-expanded', 'false'); button.classList.remove('is-open'); });
+      panels.forEach(panel => { panel.hidden = true; });
+    };
+    const closeMobile = () => {
+      mobileTrigger?.setAttribute('aria-expanded', 'false');
+      mobileTrigger?.setAttribute('aria-label', 'Open menu');
+      mobileOpen.forEach(el => { el.hidden = true; });
+      mobileClosed.forEach(el => { el.hidden = false; });
+    };
+    triggers.forEach(button => button.addEventListener('click', () => {
+      const open = button.getAttribute('aria-expanded') !== 'true';
+      closeDesktop();
+      if (open) {
+        button.setAttribute('aria-expanded', 'true'); button.classList.add('is-open');
+        const panel = panels.find(p => p.dataset.menuPanel === button.dataset.menuTrigger);
+        if (panel) panel.hidden = false;
+      }
+    }));
+    mobileTrigger?.addEventListener('click', () => {
+      const open = mobileTrigger.getAttribute('aria-expanded') !== 'true';
+      closeDesktop();
+      mobileTrigger.setAttribute('aria-expanded', String(open));
+      mobileTrigger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      mobileOpen.forEach(el => { el.hidden = !open; });
+      mobileClosed.forEach(el => { el.hidden = open; });
+    });
+    document.addEventListener('click', event => {
+      if (!header.contains(event.target as Node)) { closeDesktop(); closeMobile(); }
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      const trigger = triggers.find(b => b.getAttribute('aria-expanded') === 'true');
+      const mobile = mobileTrigger?.getAttribute('aria-expanded') === 'true';
+      closeDesktop(); closeMobile();
+      (trigger ?? (mobile ? mobileTrigger : null))?.focus();
+    });
+    header.addEventListener('focusout', () => {
+      setTimeout(() => { if (!header.contains(document.activeElement)) { closeDesktop(); closeMobile(); } }, 0);
+    });
+    window.matchMedia('(min-width:1041px)').addEventListener('change', () => { closeDesktop(); closeMobile(); });
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('[data-faq-toggle]').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      const answer = item?.querySelector<HTMLElement>('[data-faq-answer]');
+      if (!answer) return;
+      const open = button.getAttribute('aria-expanded') !== 'true';
+      button.setAttribute('aria-expanded', String(open)); answer.hidden = !open;
+      const minus = item?.querySelector<HTMLElement>('[data-faq-minus]');
+      const plus = item?.querySelector<HTMLElement>('[data-faq-plus]');
+      if (minus) minus.hidden = !open;
+      if (plus) plus.hidden = open;
+    });
+  });
+
+  const categoryButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-blog-category]'));
+  const posts = Array.from(document.querySelectorAll<HTMLElement>('[data-blog-post]'));
+  const moreButton = document.querySelector<HTMLButtonElement>('[data-blog-more]');
+  if (posts.length) {
+    let category = 'All';
+    // The reference initially shows all ten supplied cards. Load-more is honest
+    // about the finite export; no invented articles or duplicate cards are added.
+    const filter = (value: string) => {
+      category = value;
+      categoryButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.blogCategory === category)));
+      posts.forEach(post => { post.hidden = category !== 'All' && post.dataset.category !== category; });
+      if (moreButton) { moreButton.textContent = 'All articles loaded'; moreButton.disabled = true; }
+    };
+    categoryButtons.forEach(button => button.addEventListener('click', () => filter(button.dataset.blogCategory || 'All')));
+    moreButton?.addEventListener('click', () => filter(category));
+  }
+
+  // Equipment navigation progressively becomes tabs; without JS it remains
+  // ordinary in-page links with every specification available.
+  const tabs = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-equipment-tab]'));
+  if (tabs.length) {
+    const select = (tab: HTMLAnchorElement, focus = false) => {
+      tabs.forEach(t => {
+        const selected = t === tab;
+        t.setAttribute('aria-selected', String(selected));
+        t.tabIndex = selected ? 0 : -1;
+        t.classList.toggle('tab-active', selected);
+        const panel = document.getElementById(t.hash.slice(1));
+        if (panel) panel.hidden = !selected;
+      });
+      if (focus) tab.focus();
+    };
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', event => { event.preventDefault(); select(tab); history.replaceState(null, '', tab.hash); });
+      tab.addEventListener('keydown', event => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const n = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (i + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+        select(tabs[n], true);
+      });
+    });
+  }
+
+  // Facility zones retain their exact schematic labels and geometry; selecting
+  // a zone highlights it and announces its own supplied description.
+  const zones = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-facility-zone]'));
+  zones.forEach((zone, i) => {
+    const pick = () => {
+      zones.forEach(z => { z.setAttribute('aria-pressed', String(z === zone)); z.classList.toggle('tab-active', z === zone); });
+    };
+    zone.addEventListener('click', pick);
+    zone.addEventListener('keydown', event => {
+      if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      const n = event.key === 'Home' ? 0 : event.key === 'End' ? zones.length - 1 : (i + (event.key === 'ArrowRight' ? 1 : -1) + zones.length) % zones.length;
+      zones[n].focus(); zones[n].click();
+    });
+  });
+
+  const form = document.querySelector<HTMLFormElement>('#quote-form');
+  if (form) {
+    const steps = Array.from(form.querySelectorAll<HTMLFieldSetElement>('[data-quote-step]'));
+    const validate = (step: HTMLFieldSetElement) => {
+      const invalid = Array.from(step.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>('input,textarea,select')).find(field => !field.checkValidity());
+      if (invalid) { invalid.reportValidity(); invalid.focus(); return false; }
+      return true;
+    };
+    steps.forEach((step, i) => {
+      step.querySelector<HTMLButtonElement>('[data-step-next]')?.addEventListener('click', () => {
+        if (!validate(step)) return;
+        step.dataset.complete = 'true';
+        const next = steps[i + 1];
+        if (!next) return;
+        next.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        next.setAttribute('tabindex','-1'); next.focus({preventScroll:true});
+        const field = next.querySelector<HTMLElement>('input:not(:disabled),textarea,select'); field?.focus({preventScroll:true});
+      });
+    });
+    form.querySelector<HTMLButtonElement>('[data-remove-example]')?.addEventListener('click', event => {
+      (event.currentTarget as HTMLElement).parentElement?.remove();
+    });
+    const files = form.querySelector<HTMLInputElement>('[data-selected-files-input]');
+    const list = form.querySelector<HTMLElement>('[data-selected-files]');
+    files?.addEventListener('change', () => {
+      const selected = Array.from(files.files ?? []);
+      files.setCustomValidity(selected.length > 10 || selected.some(f => f.size > 25 * 1024 * 1024) ? 'Select up to 10 files, each at most 25 MB.' : '');
+      if (list) list.textContent = selected.map(f => f.name).join(', ');
+      files.reportValidity();
+    });
+  }
+  document.querySelectorAll<HTMLFormElement>('[data-enquiry-form]').forEach(enquiry => {
+    enquiry.addEventListener('submit', event => {
+      if (enquiry.dataset.canSubmit !== 'true') {
+        event.preventDefault();
+        const status = enquiry.querySelector<HTMLElement>('[role="status"]');
+        if (status) { status.tabIndex = -1; status.focus(); }
+      }
+    });
+  });
+  document.querySelectorAll<HTMLAnchorElement>('[data-unavailable]').forEach(link => {
+    link.addEventListener('click', event => { event.preventDefault(); });
+  });
+</script>

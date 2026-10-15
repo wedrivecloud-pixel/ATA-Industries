@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import {designData} from "../../data/Blog";
+const {cats,posts}=designData;
+---
+<BaseLayout title="Fabrication Insights blog" description="Fabrication Insights: company news, manufacturing processes, market insights and emerging technology from ATA Industries.">
+<div class="ata" style="background: #fff">
+  <Header active="about" />
+  <main id="main" tabindex="-1">
+    <section aria-labelledby="blog-title" style="background: var(--paper); border-bottom: 1px solid var(--steel-200)">
+      <div class="wrap" style="padding-top: 28px; padding-bottom: clamp(40px, 5cqi, 64px)">
+        <nav aria-label="Breadcrumb"><ol class="crumbs" style="color: var(--steel-600)"><li><a href="/" style="color: var(--steel-600)">Home</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: var(--ink)">Blog</li></ol></nav>
+        <div style="max-width: 760px; display: flex; flex-direction: column; gap: 20px; padding-top: clamp(32px, 4cqi, 56px)">
+          <p class="eyebrow">Fabrication Insights</p>
+          <h1 id="blog-title" class="disp h1">From the shop floor.</h1>
+          <p class="lead">Company news, market insights and technology updates from the ATA Industries team.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section style="padding-top: clamp(40px, 5cqi, 72px)">
+      <div class="wrap">
+        <a class="card" href="/blog/the-role-of-robotic-welding-in-modern-fabrication/" style="flex-direction: row; flex-wrap: wrap">
+          <div class="ph" style="flex: 1.3 1 480px; min-height: 360px">[Featured article image]</div>
+          <div style="flex: 1 1 380px; padding: clamp(28px, 3.5cqi, 48px); display: flex; flex-direction: column; gap: 16px; justify-content: center">
+            <span class="badge badge-arc" style="align-self: flex-start">Featured · Emerging Technology</span>
+            <h2 class="disp h2">The Role of Robotic Welding in Modern Fabrication</h2>
+            <p class="body">How robotic welding reduces part-to-part variability, and where manual welding still wins.</p>
+            <span class="mono" style="color: var(--steel-600)">[Date] · [X] min read</span>
+            <span class="card-cta">Read article <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- FILTER + GRID -->
+    <section class="sec" style="padding-top: clamp(40px, 5cqi, 72px)">
+      <div class="wrap">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--steel-200)">
+          <h2 class="disp h3">All articles</h2>
+          <div role="group" aria-label="Filter by category" style="display: flex; flex-wrap: wrap; gap: 8px">
+            {cats.map((c) => ( <Fragment>
+              <button type="button" class="chip" aria-pressed={c.pressed} data-blog-category={c.label} style="font-family: inherit; cursor: pointer">{c.label}</button>
+            </Fragment> ))}
+          </div>
+        </div>
+        <div class="g3">
+          {posts.map((p) => ( <Fragment>
+            <a class="card" data-blog-post data-category={p.cat} href={`/blog/${p.slug}/`}><div class="ph" style="aspect-ratio: 16 / 9">[Article image]</div><div class="card-body"><span class="mono" style="color: var(--steel-600)">{p.cat} · [Date]</span><h3 class="disp h4">{p.title}</h3><span class="card-cta">Read article <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span></div></a>
+          </Fragment> ))}
+        </div>
+        <div style="display: flex; justify-content: center; margin-top: 48px">
+          <button type="button" class="btn btn-secondary" data-blog-more>Load more articles</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <CtaBand />
+  <Footer />
+</div>
+</BaseLayout>

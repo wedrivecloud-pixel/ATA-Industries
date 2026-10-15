@@ -1,0 +1,152 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import {siteData} from "../../data/siteData";
+const canSubmit=siteData.formsEnabled && !!siteData.formEndpoint;
+---
+<BaseLayout title="Careers" description="Explore manufacturing careers, work schedules and application information at ATA Industries.">
+<div class="ata" style="background: #fff">
+  <Header active="about" />
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section aria-labelledby="car-title" style="border-bottom: 1px solid var(--steel-200)">
+      <div class="wrap" style="padding-top: 28px"><nav aria-label="Breadcrumb"><ol class="crumbs" style="color: var(--steel-600)"><li><a href="/" style="color: var(--steel-600)">Home</a></li><li aria-hidden="true">/</li><li><a href="/about/" style="color: var(--steel-600)">About</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: var(--ink)">Careers</li></ol></nav></div>
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 40px clamp(40px, 5cqi, 80px); align-items: stretch; padding-top: clamp(32px, 4cqi, 56px); padding-bottom: clamp(48px, 6cqi, 88px)">
+        <div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 24px; justify-content: center">
+          <p class="eyebrow">Careers at ATA Industries</p>
+          <h1 id="car-title" class="disp h1">Build the parts that keep the country running.</h1>
+          <p class="lead">A close-knit team with hands-on owners you can actually talk to. Low-volume, high-mix work means you'll run different machines on different jobs, for food production, power grids, logistics and more.</p>
+          <div class="stack-m" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+            <a class="btn btn-primary" href="#apply">Apply now <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+            <a class="btn btn-secondary" href="#positions">See positions</a>
+          </div>
+        </div>
+        <div class="ph" style="flex: 1 1 520px; min-height: 420px">[Photo: welder and operator on the floor, candid]</div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section style="background: var(--mill); color: #fff">
+      <div class="wrap" style="padding-top: 40px; padding-bottom: 48px">
+        <div class="trust">
+          <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">18 yrs</p><p class="stat-label" style="color: var(--on-dark-2)">Average employee tenure</p></div>
+          <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">2 shifts</p><p class="stat-label" style="color: var(--on-dark-2)">2nd shift premium</p></div>
+          <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">401(k)</p><p class="stat-label" style="color: var(--on-dark-2)">With company match</p></div>
+          <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">+10,000</p><p class="stat-label" style="color: var(--on-dark-2)">Sq ft expansion underway</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">Why work here</p>
+            <h2 class="disp h2">A small shop that's growing.</h2>
+          </div>
+        </div>
+        <div class="g4" style="gap: 40px 32px">
+          <div style="display: flex; flex-direction: column; gap: 10px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Varied work</h3><p class="body small">Low-volume, high-mix jobs for customers whose systems run in Amazon and Walmart operations.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 10px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Training</h3><p class="body small">For experienced tradespeople and newcomers with problem-solving skills and a strong work ethic.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 10px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Reachable leadership</h3><p class="body small">Owners and managers work alongside the floor, not behind closed doors.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 10px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Investment</h3><p class="body small">New space, better lighting and HVAC, and more robotics on the way.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS + SHIFTS -->
+    <section class="sec" style="background: var(--paper)">
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px clamp(40px, 6cqi, 96px)">
+        <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 24px">
+          <p class="eyebrow">Benefits</p>
+          <h2 class="disp h3">What you get</h2>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--steel-200)">
+            <li style="display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--steel-200)"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none; margin-top: 2px"><rect width="22" height="22" fill="#14181C"></rect><path d="M6 11.5l3.2 3.2L16 8" fill="none" stroke="#fff" stroke-width="2"></path></svg>Health insurance</li>
+            <li style="display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--steel-200)"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none; margin-top: 2px"><rect width="22" height="22" fill="#14181C"></rect><path d="M6 11.5l3.2 3.2L16 8" fill="none" stroke="#fff" stroke-width="2"></path></svg>Vision and dental coverage</li>
+            <li style="display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--steel-200)"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none; margin-top: 2px"><rect width="22" height="22" fill="#14181C"></rect><path d="M6 11.5l3.2 3.2L16 8" fill="none" stroke="#fff" stroke-width="2"></path></svg>401(k) with company match</li>
+            <li style="display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--steel-200)"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none; margin-top: 2px"><rect width="22" height="22" fill="#14181C"></rect><path d="M6 11.5l3.2 3.2L16 8" fill="none" stroke="#fff" stroke-width="2"></path></svg>Paid holidays, including New Year's Eve, Good Friday and Memorial Day</li>
+            <li style="display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--steel-200)"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none; margin-top: 2px"><rect width="22" height="22" fill="#14181C"></rect><path d="M6 11.5l3.2 3.2L16 8" fill="none" stroke="#fff" stroke-width="2"></path></svg>On-the-job training</li>
+          </ul>
+        </div>
+        <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 24px">
+          <p class="eyebrow">Shifts</p>
+          <h2 class="disp h3">Work schedules</h2>
+          <div style="overflow-x: auto">
+            <table class="spec-table" style="background: #fff">
+              <thead><tr><th scope="col" style="padding-left: 16px">Shift</th><th scope="col">Mon–Thu</th><th scope="col">Friday</th></tr></thead>
+              <tbody>
+                <tr><th scope="row" style="padding-left: 16px">1st</th><td>7:00 AM – 4:30 PM</td><td>7:00 – 11:00 AM</td></tr>
+                <tr><th scope="row" style="padding-left: 16px">2nd</th><td>4:30 PM – 3:00 AM</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="help">2nd shift includes a shift premium. Overtime varies by shift.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSITIONS + FORM -->
+    <section class="sec" id="positions">
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px clamp(40px, 6cqi, 96px); align-items: flex-start">
+        <div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 20px">
+          <p class="eyebrow">Positions we hire for</p>
+          <h2 class="disp h2">Find your spot on the floor.</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <span class="badge" style="color: var(--steel-700)">MIG Welder</span>
+            <span class="badge" style="color: var(--steel-700)">TIG Welder</span>
+            <span class="badge" style="color: var(--steel-700)">Laser Operator</span>
+            <span class="badge" style="color: var(--steel-700)">Brake Press Operator</span>
+            <span class="badge" style="color: var(--steel-700)">Machinist</span>
+            <span class="badge" style="color: var(--steel-700)">General Labor</span>
+            <span class="badge" style="color: var(--steel-700)">Designer</span>
+            <span class="badge" style="color: var(--steel-700)">Engineer</span>
+            <span class="badge" style="color: var(--steel-700)">Front Office</span>
+            <span class="badge" style="color: var(--steel-700)">Purchasing</span>
+          </div>
+          <p class="body small">Questions? Call <a href="tel:+12626295527" style="font-weight: 600">(262) 629-5527</a>.</p>
+        </div>
+        <form method="post" enctype="multipart/form-data" action={canSubmit?siteData.formEndpoint:undefined} data-enquiry-form data-can-submit={canSubmit?"true":"false"} id="apply" aria-labelledby="apply-title" style="flex: 1.5 1 520px; border: 1px solid var(--steel-200); padding: clamp(24px, 3cqi, 40px); display: flex; flex-direction: column; gap: 22px">
+          <h3 id="apply-title" class="disp h3">Apply</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 20px">
+            <div class="field"><label for="c-name">Full name <span class="req" aria-hidden="true">*</span></label><input id="c-name" name="c-name" class="input" type="text" autocomplete="name" required=""></div>
+            <div class="field"><label for="c-email">Email <span class="req" aria-hidden="true">*</span></label><input id="c-email" name="c-email" class="input" type="email" autocomplete="email" required=""></div>
+            <div class="field"><label for="c-phone">Phone <span class="req" aria-hidden="true">*</span></label><input id="c-phone" name="c-phone" class="input" type="tel" autocomplete="tel" required=""></div>
+            <div class="field">
+              <label for="c-pos">Position of interest</label>
+              <div class="select-wrap">
+                <select id="c-pos" name="c-pos" class="input">
+                  <option>Select a position</option><option>General Labor</option><option>MIG Welder</option><option>TIG Welder</option><option>Laser Operator</option><option>Brake Press Operator</option><option>Machinist</option><option>Designer</option><option>Engineer</option><option>Front Office</option><option>Purchasing</option><option>Other</option>
+                </select>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+              </div>
+            </div>
+          </div>
+          <fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+            <legend class="label" style="padding: 0; margin-bottom: 10px">Preferred shift</legend>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <label class="chip" style="cursor: pointer"><input type="radio" name="shift" value="Days" style="accent-color: #C2410C; width: 18px; height: 18px">Days</label>
+              <label class="chip" style="cursor: pointer"><input type="radio" name="shift" value="Nights" style="accent-color: #C2410C; width: 18px; height: 18px">Nights</label>
+              <label class="chip" style="cursor: pointer"><input type="radio" name="shift" value="Weekends" style="accent-color: #C2410C; width: 18px; height: 18px">Weekends</label>
+              <label class="chip" style="cursor: pointer"><input type="radio" name="shift" value="No preference" style="accent-color: #C2410C; width: 18px; height: 18px">No preference</label>
+            </div>
+          </fieldset>
+          <div class="field"><label for="c-cover">Cover letter <span class="req" aria-hidden="true">*</span></label><textarea id="c-cover" name="c-cover" class="input" required="" placeholder="Tell us about your experience and the machines you've run."></textarea></div>
+          <div class="field">
+            <span class="label">Resume (optional)</span>
+            <div class="drop" style="position: relative; padding: 20px">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"></path></svg>
+              <p style="margin: 0; flex: 1 1 200px"><label for="c-resume" style="color: var(--arc); text-decoration: underline; cursor: pointer; font-weight: 600">Upload resume</label> <span class="help">PDF or DOCX, up to 20 MB</span></p>
+              <input accept=".pdf,.docx" disabled={!canSubmit} id="c-resume" name="c-resume" type="file" style="position: absolute; width: 1px; height: 1px; opacity: 0">
+            </div>
+          </div>
+          <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--steel-700)"><input name="consent" value="yes" type="checkbox" required="" style="accent-color: #C2410C; width: 20px; height: 20px; margin-top: 1px; flex: none">I agree to be contacted by phone, text or email about my application. I can opt out at any time.</label>
+          <button disabled={!canSubmit} type="submit" class="btn btn-primary" style="align-self: flex-start">Submit application</button>
+        <p class="form-status" role="status">{canSubmit?"Your details will be sent to the configured enquiry service.":"Preview form — submissions and uploads are not connected. Nothing is sent."}</p></form>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</div>
+</BaseLayout>

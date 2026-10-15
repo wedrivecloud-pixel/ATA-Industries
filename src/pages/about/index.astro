@@ -1,0 +1,149 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CtaBand from "../../components/CtaBand.astro";
+---
+<BaseLayout title="About ATA Industries" description="Learn about ATA Industries, its manufacturing story, team, values and approach to contract metal fabrication.">
+<div class="ata" style="background: #fff">
+  <Header active="about" />
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section aria-labelledby="about-title" style="border-bottom: 1px solid var(--steel-200)">
+      <div class="wrap" style="padding-top: 28px"><nav aria-label="Breadcrumb"><ol class="crumbs" style="color: var(--steel-600)"><li><a href="/" style="color: var(--steel-600)">Home</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: var(--ink)">About</li></ol></nav></div>
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 40px clamp(40px, 5cqi, 80px); align-items: stretch; padding-top: clamp(32px, 4cqi, 56px); padding-bottom: clamp(48px, 6cqi, 88px)">
+        <div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 24px; justify-content: center">
+          <p class="eyebrow">About ATA Industries</p>
+          <h1 id="about-title" class="disp h1">A Hartford job shop since 1960. A new name for what comes next.</h1>
+          <p class="lead">For more than 60 years we've built parts and equipment for farmers, food processors and OEMs across the country. In 2026, LMI Manufacturing became ATA Industries.</p>
+          <div class="stack-m" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+            <a class="btn btn-primary" href="/quote/">Request a Quote</a>
+            <a class="btn btn-secondary" href="/facility/">Tour the facility</a>
+          </div>
+        </div>
+        <div class="ph" style="flex: 1 1 520px; min-height: 440px">[Photo: the ATA Industries team in front of the Hartford facility]</div>
+      </div>
+    </section>
+
+    <!-- REBRAND -->
+    <section style="background: var(--mill); color: var(--on-dark)">
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 40px clamp(40px, 6cqi, 96px); padding-top: clamp(56px, 6cqi, 96px); padding-bottom: clamp(56px, 6cqi, 96px)">
+        <div style="flex: 1 1 400px; display: flex; flex-direction: column; gap: 20px">
+          <p class="eyebrow" style="color: var(--arc-on-dark)">New name, same shop</p>
+          <h2 class="disp h2" style="color: #fff">LMI Manufacturing is now ATA Industries.</h2>
+          <p class="body" style="color: var(--on-dark-2)">[Short statement from ownership on why the company is rebranding and what the new name stands for.]</p>
+        </div>
+        <div style="flex: 1 1 480px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 0; border-top: 1px solid var(--mill-line)">
+          <div style="padding: 20px 20px 20px 0; border-bottom: 1px solid var(--mill-line)"><p class="mono" style="margin: 0; color: var(--arc-on-dark)">Same</p><p style="margin: 6px 0 0; color: #fff; font-weight: 600">Facility in Hartford, WI</p></div>
+          <div style="padding: 20px 20px 20px 0; border-bottom: 1px solid var(--mill-line)"><p class="mono" style="margin: 0; color: var(--arc-on-dark)">Same</p><p style="margin: 6px 0 0; color: #fff; font-weight: 600">Phone: (262) 629-5527</p></div>
+          <div style="padding: 20px 20px 20px 0; border-bottom: 1px solid var(--mill-line)"><p class="mono" style="margin: 0; color: var(--arc-on-dark)">Same</p><p style="margin: 6px 0 0; color: #fff; font-weight: 600">ISO 9001:2015 quality system</p></div>
+          <div style="padding: 20px 20px 20px 0; border-bottom: 1px solid var(--mill-line)"><p class="mono" style="margin: 0; color: var(--arc-on-dark)">New</p><p style="margin: 6px 0 0; color: #fff; font-weight: 600">Name, logo and website</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section style="border-bottom: 1px solid var(--steel-200)">
+      <div class="wrap" style="padding-top: 48px; padding-bottom: 48px">
+        <div class="trust" style="padding-top: 0">
+          <div><div class="rule" style="margin-bottom: 18px"></div><p class="stat-num">1960</p><p class="stat-label">Founded in Hartford</p></div>
+          <div><div class="rule" style="margin-bottom: 18px"></div><p class="stat-num">~35</p><p class="stat-label">People on the team</p></div>
+          <div><div class="rule" style="margin-bottom: 18px"></div><p class="stat-num">18 yrs</p><p class="stat-label">Average employee tenure</p></div>
+          <div><div class="rule" style="margin-bottom: 18px"></div><p class="stat-num">40,000</p><p class="stat-label">Sq ft facility</p></div>
+          <div><div class="rule" style="margin-bottom: 18px"></div><p class="stat-num">ISO 9001</p><p class="stat-label">2015 certified</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">Our history</p>
+            <h2 class="disp h2">Started to make life easier for local farmers.</h2>
+          </div>
+        </div>
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--steel-200)">
+          <li style="display: flex; flex-wrap: wrap; gap: 12px 48px; padding: 28px 0; border-bottom: 1px solid var(--steel-200)"><span class="disp" style="flex: 0 0 160px; font-size: 44px; line-height: 1">1960</span><div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 6px"><h3 class="disp h4">Founded as a small job shop</h3><p class="body">Lloyd Luedtke invents a hay mover and hay conditioner, then a bale thrower that was patented and manufactured for Ford.</p></div></li>
+          <li style="display: flex; flex-wrap: wrap; gap: 12px 48px; padding: 28px 0; border-bottom: 1px solid var(--steel-200)"><span class="disp" style="flex: 0 0 160px; font-size: 44px; line-height: 1">1969</span><div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 6px"><h3 class="disp h4">The Elimnator</h3><p class="body">The shop builds what it describes as the first mechanical tractor puller.</p></div></li>
+          <li style="display: flex; flex-wrap: wrap; gap: 12px 48px; padding: 28px 0; border-bottom: 1px solid var(--steel-200)"><span class="disp" style="flex: 0 0 160px; font-size: 44px; line-height: 1">1985</span><div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 6px"><h3 class="disp h4">Lance Industries</h3><p class="body">The first tumbler in the U.S., built for the food processing industry.</p></div></li>
+          <li style="display: flex; flex-wrap: wrap; gap: 12px 48px; padding: 28px 0; border-bottom: 1px solid var(--steel-200)"><span class="disp" style="flex: 0 0 160px; font-size: 44px; line-height: 1">2018</span><div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 6px"><h3 class="disp h4">New ownership</h3><p class="body">Ryan Konicek buys the company and expands the building's infrastructure and capabilities.</p></div></li>
+          <li style="display: flex; flex-wrap: wrap; gap: 12px 48px; padding: 28px 0; border-bottom: 1px solid var(--steel-200)"><span class="disp" style="flex: 0 0 160px; font-size: 44px; line-height: 1">2025</span><div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 6px"><h3 class="disp h4">ISO 9001:2015 certified</h3><p class="body">A documented quality management system, audited by a third party.</p></div></li>
+          <li style="display: flex; flex-wrap: wrap; gap: 12px 48px; padding: 28px 0; border-bottom: 1px solid var(--steel-200)"><span class="disp" style="flex: 0 0 160px; font-size: 44px; line-height: 1; color: var(--arc)">2026</span><div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 6px"><h3 class="disp h4">LMI Manufacturing becomes ATA Industries</h3><p class="body">A new name for the next chapter, with the same people and the same commitment to the work.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section class="sec" style="background: var(--paper)">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">Leadership</p>
+            <h2 class="disp h2">People you can actually reach.</h2>
+          </div>
+          <p class="body" style="max-width: 440px">A hands-on ownership and management team, close enough to the floor to answer your questions directly.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 20px">
+          <figure class="card" style="margin: 0"><div class="ph" style="aspect-ratio: 4 / 5">[Headshot]</div><figcaption class="card-body" style="gap: 4px"><b style="font-size: 18px">Ryan Konicek</b><span class="mono" style="color: var(--arc)">Owner</span><p class="body small" style="margin-top: 6px">Bought the company in 2018; leads growth and market expansion.</p></figcaption></figure>
+          <figure class="card" style="margin: 0"><div class="ph" style="aspect-ratio: 4 / 5">[Headshot]</div><figcaption class="card-body" style="gap: 4px"><b style="font-size: 18px">Randy Hasby</b><span class="mono" style="color: var(--arc)">President</span><p class="body small" style="margin-top: 6px">Manages technology, plant operations and key decisions.</p></figcaption></figure>
+          <figure class="card" style="margin: 0"><div class="ph" style="aspect-ratio: 4 / 5">[Headshot]</div><figcaption class="card-body" style="gap: 4px"><b style="font-size: 18px">Marcie Gundrum</b><span class="mono" style="color: var(--arc)">Controller</span><p class="body small" style="margin-top: 6px">Oversees financial management and supports production flow.</p></figcaption></figure>
+          <figure class="card" style="margin: 0"><div class="ph" style="aspect-ratio: 4 / 5">[Headshot]</div><figcaption class="card-body" style="gap: 4px"><b style="font-size: 18px">Joe Swessel</b><span class="mono" style="color: var(--arc)">Engineering Manager</span><p class="body small" style="margin-top: 6px">Leads the engineering team and quality standards.</p></figcaption></figure>
+          <figure class="card" style="margin: 0"><div class="ph" style="aspect-ratio: 4 / 5">[Headshot]</div><figcaption class="card-body" style="gap: 4px"><b style="font-size: 18px">Adam Bertz</b><span class="mono" style="color: var(--arc)">Shop Manager</span><p class="body small" style="margin-top: 6px">Runs plant operations and works with floor staff on precision.</p></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">What we value</p>
+            <h2 class="disp h2">More than a metal fabricator. A production partner.</h2>
+          </div>
+        </div>
+        <div class="g4" style="gap: 40px 32px">
+          <div style="display: flex; flex-direction: column; gap: 12px"><div class="rule" style="margin-bottom: 8px"></div><p class="mono" style="margin: 0; color: var(--arc)">01</p><h3 class="disp h4">Dependability &amp; trust</h3><p class="body small">Parts on time, to print, with honest answers when something changes.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 12px"><div class="rule" style="margin-bottom: 8px"></div><p class="mono" style="margin: 0; color: var(--arc)">02</p><h3 class="disp h4">Professionalism &amp; expertise</h3><p class="body small">Six decades of fabrication know-how applied to every job.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 12px"><div class="rule" style="margin-bottom: 8px"></div><p class="mono" style="margin: 0; color: var(--arc)">03</p><h3 class="disp h4">Collaborative communication</h3><p class="body small">Direct access to the people running your job, not a call center.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 12px"><div class="rule" style="margin-bottom: 8px"></div><p class="mono" style="margin: 0; color: var(--arc)">04</p><h3 class="disp h4">Continuous improvement</h3><p class="body small">Better tools, better systems and better processes every year.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S NEXT -->
+    <section class="sec" style="background: var(--mill-2); color: var(--on-dark)">
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 40px clamp(40px, 6cqi, 96px)">
+        <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 20px">
+          <p class="eyebrow" style="color: var(--arc-on-dark)">What's next</p>
+          <h2 class="disp h2" style="color: #fff">Investing in capacity and technology.</h2>
+          <p class="body" style="color: var(--on-dark-2)">Real-time shop floor dashboards already give customers accurate lead times. Here's what we're building next.</p>
+        </div>
+        <ul style="flex: 1.3 1 520px; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 0; border-top: 1px solid var(--mill-line)">
+          <li style="padding: 20px 20px 20px 0; border-bottom: 1px solid var(--mill-line)"><b style="color: #fff">10,000 sq ft expansion</b><p class="small" style="margin: 4px 0 0; color: var(--on-dark-2)">Plus upgraded lighting and HVAC.</p></li>
+          <li style="padding: 20px 20px 20px 0; border-bottom: 1px solid var(--mill-line)"><b style="color: #fff">17 acres for long-term growth</b><p class="small" style="margin: 4px 0 0; color: var(--on-dark-2)">Room to scale with our customers.</p></li>
+          <li style="padding: 20px 20px 20px 0; border-bottom: 1px solid var(--mill-line)"><b style="color: #fff">More robotic welding</b><p class="small" style="margin: 4px 0 0; color: var(--on-dark-2)">Plus part tracking and capacity planning.</p></li>
+          <li style="padding: 20px 20px 20px 0; border-bottom: 1px solid var(--mill-line)"><b style="color: #fff">Quoting linked to ERP</b><p class="small" style="margin: 4px 0 0; color: var(--on-dark-2)">On the way to paperless production.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="sec">
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 40px clamp(40px, 6cqi, 96px); align-items: center">
+        <div class="ph" style="flex: 1 1 420px; aspect-ratio: 16 / 10">[Photo: intern or apprentice on the shop floor]</div>
+        <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 20px">
+          <p class="eyebrow">In our community</p>
+          <h2 class="disp h2">Good-paying jobs for local talent.</h2>
+          <p class="body">We partner with local tech schools on internships and job opportunities, and train newcomers alongside experienced fabricators.</p>
+          <a class="link-arrow" href="/careers/" style="align-self: flex-start">Careers at ATA Industries <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <CtaBand />
+  <Footer />
+</div>
+</BaseLayout>

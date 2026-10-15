@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import {designData} from "../../data/Facility";
+const {faqs}=designData;
+---
+<BaseLayout title="Facility" description="Explore the ATA Industries Hartford facility, production flow, equipment highlights and visiting information.">
+<div class="ata" style="background: #fff">
+  <Header active="capabilities" />
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section aria-labelledby="fac-title" style="position: relative; background: var(--mill); color: #fff; overflow: hidden">
+      <div class="ph" style="position: absolute; inset: 0; align-items: flex-start; justify-content: flex-end; padding: 20px 24px"><span style="max-width: 280px; text-align: right">[Wide photo: facility floor, laser bay to weld cells]</span></div>
+      <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,17,20,.94) 0%, rgba(14,17,20,.78) 50%, rgba(14,17,20,.35) 100%)"></div>
+      <div class="wrap" style="position: relative; padding-top: 28px; padding-bottom: 40px">
+        <nav aria-label="Breadcrumb"><ol class="crumbs" style="color: var(--on-dark-2)"><li><a href="/" style="color: var(--on-dark-2)">Home</a></li><li aria-hidden="true">/</li><li><a href="/equipment/" style="color: var(--on-dark-2)">Capabilities</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: #fff">Facility</li></ol></nav>
+        <div style="max-width: 800px; display: flex; flex-direction: column; gap: 22px; padding-top: clamp(56px, 7cqi, 112px)">
+          <p class="eyebrow" style="color: var(--arc-on-dark)">Our facility</p>
+          <h1 id="fac-title" class="disp h1" style="color: #fff">40,000 sq ft. Every process under one roof.</h1>
+          <p class="lead" style="color: var(--on-dark)">A recently renovated fabrication facility in Hartford, Wisconsin, central to Midwest and national shipping lanes.</p>
+          <div class="stack-m" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+            <a class="btn btn-primary" href="/quote/">Request a Quote</a>
+            <a class="btn btn-ghost-dark" href="/quote/">Schedule a tour</a>
+          </div>
+        </div>
+        <div class="trust" style="margin-top: clamp(48px, 6cqi, 96px)">
+          <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">40,000</p><p class="stat-label" style="color: var(--on-dark-2)">Sq ft facility</p></div>
+          <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">6kW</p><p class="stat-label" style="color: var(--on-dark-2)">Big-bed fiber laser</p></div>
+          <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">~1,000</p><p class="stat-label" style="color: var(--on-dark-2)">Turret punch tools</p></div>
+          <div><div class="rule-dark" style="margin-bottom: 18px"></div><p class="stat-num">350 ton</p><p class="stat-label" style="color: var(--on-dark-2)">Max press brake</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOOR PLAN -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">How a part moves through the building</p>
+            <h2 class="disp h2">Raw stock in one dock, finished assemblies out the other.</h2>
+          </div>
+          <p class="help" style="max-width: 320px">Schematic, not to scale. [Replace zones with the real floor layout.]</p>
+        </div>
+        <div style="border: 2px solid var(--ink); padding: 12px; background: var(--paper)">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr)); gap: 12px">
+            <button type="button" data-facility-zone aria-pressed="false" style="background: #fff; border: 1px solid var(--steel-300); padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px"><span class="mono" style="color: var(--arc)">Zone A</span><b>Receiving &amp; raw stock</b><span class="help">Heat certs logged</span></button>
+            <button type="button" data-facility-zone aria-pressed="false" style="background: #fff; border: 1px solid var(--steel-300); padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px"><span class="mono" style="color: var(--arc)">Zone B</span><b>Laser, punch &amp; shear</b><span class="help">6kW fiber · turret punch</span></button>
+            <button type="button" data-facility-zone aria-pressed="false" style="background: #fff; border: 1px solid var(--steel-300); padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px"><span class="mono" style="color: var(--arc)">Zone C</span><b>Forming &amp; rolling</b><span class="help">28–350 ton brakes</span></button>
+            <button type="button" data-facility-zone aria-pressed="false" style="background: #fff; border: 1px solid var(--steel-300); padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px"><span class="mono" style="color: var(--arc)">Zone D</span><b>Welding &amp; grinding</b><span class="help">Manual + Cooper Cobot</span></button>
+            <button type="button" data-facility-zone aria-pressed="false" style="background: #fff; border: 1px solid var(--steel-300); padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px"><span class="mono" style="color: var(--arc)">Zone E</span><b>Machining</b><span class="help">HAAS · Milltronics</span></button>
+            <button type="button" data-facility-zone aria-pressed="false" style="background: #fff; border: 1px solid var(--steel-300); padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px"><span class="mono" style="color: var(--arc)">Zone F</span><b>Paint, assembly &amp; staging</b><span class="help">Batch paint booth</span></button>
+            <button type="button" data-facility-zone aria-pressed="false" style="background: var(--ink); color: #fff; padding: 18px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px"><span class="mono" style="color: var(--arc-on-dark)">Zone G</span><b>Inspection &amp; shipping</b><span class="small" style="color: var(--on-dark-2)">M–F, 7:30–4:30</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="sec" style="background: var(--paper)">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">Facility benefits</p>
+            <h2 class="disp h2">Why one building matters to your schedule.</h2>
+          </div>
+        </div>
+        <div class="g3" style="gap: 40px 32px">
+          <div style="display: flex; flex-direction: column; gap: 12px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Streamlined in-house processing</h3><p class="body small">Parts move between operations in minutes, not between suppliers in days.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 12px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Lower project costs</h3><p class="body small">Controlled operations and no freight between shops keep costs predictable.</p></div>
+          <div style="display: flex; flex-direction: column; gap: 12px"><div class="rule" style="margin-bottom: 8px"></div><h3 class="disp h4">Turnaround for tight deadlines</h3><p class="body small">Real-time shop floor dashboards and reserved rush capacity keep lead times honest.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUIPMENT HIGHLIGHTS -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">On the floor</p>
+            <h2 class="disp h2">Equipment highlights</h2>
+          </div>
+          <a class="link-arrow" href="/equipment/">Full equipment specs <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+        </div>
+        <div class="g5">
+          <figure class="card" style="margin: 0"><div class="ph" style="aspect-ratio: 4 / 3">[Photo]</div><figcaption class="card-body"><h3 class="disp h4">Fiber laser</h3><p class="spec" style="margin-top: 0">6kW · 158″ × 79″</p></figcaption></figure>
+          <figure class="card" style="margin: 0"><div class="ph" style="aspect-ratio: 4 / 3">[Photo]</div><figcaption class="card-body"><h3 class="disp h4">Robotic welding</h3><p class="spec" style="margin-top: 0">Cooper Cobot</p></figcaption></figure>
+          <figure class="card" style="margin: 0"><div class="ph" style="aspect-ratio: 4 / 3">[Photo]</div><figcaption class="card-body"><h3 class="disp h4">CNC machining &amp; turning</h3><p class="spec" style="margin-top: 0">HAAS · Milltronics</p></figcaption></figure>
+          <figure class="card" style="margin: 0"><div class="ph" style="aspect-ratio: 4 / 3">[Photo]</div><figcaption class="card-body"><h3 class="disp h4">Turret punch</h3><p class="spec" style="margin-top: 0">58 stations</p></figcaption></figure>
+          <figure class="card" style="margin: 0"><div class="ph" style="aspect-ratio: 4 / 3">[Photo]</div><figcaption class="card-body"><h3 class="disp h4">Press brakes</h3><p class="spec" style="margin-top: 0">28–350 ton</p></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUALITY + FAQ -->
+    <section class="sec" style="border-top: 1px solid var(--steel-200)">
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 40px clamp(40px, 6cqi, 96px)">
+        <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 20px; max-width: 440px">
+          <p class="eyebrow">Facility FAQ</p>
+          <h2 class="disp h2">Visiting and working with us.</h2>
+          <div class="iso-badge" style="align-self: flex-start; margin-top: 8px">
+            <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"></rect><path d="M9 17.5l5 5L25 11" fill="none" stroke="#C2410C" stroke-width="2.5"></path></svg>
+            <div><b>ISO 9001:2015</b><span>AWS-qualified welding team</span></div>
+          </div>
+          <a class="link-arrow" href="/quality/" style="align-self: flex-start">Quality assurance <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+        </div>
+        <div style="flex: 2 1 560px">
+          {faqs.map((f, index) => ( <Fragment>
+            <div class="faq-item">
+              <h3 style="margin: 0"><button type="button" class="faq-q" id={`faq-question-${index}`} aria-expanded={f.expanded} data-faq-toggle aria-controls={`faq-answer-${index}`}>{f.q}<span class="faq-icon">
+                <span data-faq-minus hidden={!f.open}><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10"></path></svg></span>
+                <span data-faq-plus hidden={f.open}><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M7 2v10"></path></svg></span>
+              </span></button></h3>
+              <div data-faq-answer id={`faq-answer-${index}`} role="region" aria-labelledby={`faq-question-${index}`} hidden={!f.open}><p class="faq-a">{f.a}</p></div>
+            </div>
+          </Fragment> ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <CtaBand />
+  <Footer />
+</div>
+</BaseLayout>

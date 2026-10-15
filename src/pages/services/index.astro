@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CtaBand from "../../components/CtaBand.astro";
+---
+<BaseLayout title="Metal fabrication services" description="Explore ATA Industries metal fabrication services, from laser cutting and forming to welding, CNC machining, finishing and assembly.">
+<div class="ata" style="background: #fff">
+  <Header active="services" />
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section aria-labelledby="svcs-title" style="background: var(--paper); border-bottom: 1px solid var(--steel-200)">
+      <div class="wrap" style="padding-top: 28px; padding-bottom: clamp(48px, 6cqi, 88px)">
+        <nav aria-label="Breadcrumb"><ol class="crumbs" style="color: var(--steel-600)"><li><a href="/" style="color: var(--steel-600)">Home</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: var(--ink)">Services</li></ol></nav>
+        <div style="display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-end; justify-content: space-between; padding-top: clamp(32px, 4cqi, 56px)">
+          <div style="max-width: 800px; display: flex; flex-direction: column; gap: 22px">
+            <p class="eyebrow">Metal fabrication services</p>
+            <h1 id="svcs-title" class="disp h1">Every process, one facility, one point of contact.</h1>
+            <p class="lead">From flat sheet to finished assembly, your parts never leave our 40,000 sq ft Hartford facility between operations. Fewer handoffs means shorter lead times and fewer surprises.</p>
+            <div class="stack-m" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px">
+              <a class="btn btn-primary" href="/quote/">Request a Quote <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+              <a class="btn btn-secondary" href="/equipment/">See equipment specs</a>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; max-width: 360px">
+            <span class="badge badge-solid">ISO 9001:2015</span>
+            <span class="badge" style="color: var(--steel-700)">AWS D1.1</span>
+            <span class="badge" style="color: var(--steel-700)">24–48 hr quotes</span>
+            <span class="badge badge-arc">20% rush capacity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOW -->
+    <section aria-label="How services connect" style="border-bottom: 1px solid var(--steel-200)">
+      <div class="wrap" style="padding-top: 32px; padding-bottom: 32px">
+        <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 12px">
+          <li style="display: flex; align-items: center; gap: 10px"><span class="mono" style="color: var(--arc)">01</span><b>Cut</b><span aria-hidden="true" style="flex: 1; height: 1px; background: var(--steel-300)"></span></li>
+          <li style="display: flex; align-items: center; gap: 10px"><span class="mono" style="color: var(--arc)">02</span><b>Punch</b><span aria-hidden="true" style="flex: 1; height: 1px; background: var(--steel-300)"></span></li>
+          <li style="display: flex; align-items: center; gap: 10px"><span class="mono" style="color: var(--arc)">03</span><b>Form</b><span aria-hidden="true" style="flex: 1; height: 1px; background: var(--steel-300)"></span></li>
+          <li style="display: flex; align-items: center; gap: 10px"><span class="mono" style="color: var(--arc)">04</span><b>Weld</b><span aria-hidden="true" style="flex: 1; height: 1px; background: var(--steel-300)"></span></li>
+          <li style="display: flex; align-items: center; gap: 10px"><span class="mono" style="color: var(--arc)">05</span><b>Machine</b><span aria-hidden="true" style="flex: 1; height: 1px; background: var(--steel-300)"></span></li>
+          <li style="display: flex; align-items: center; gap: 10px"><span class="mono" style="color: var(--arc)">06</span><b>Finish</b><span aria-hidden="true" style="flex: 1; height: 1px; background: var(--steel-300)"></span></li>
+          <li style="display: flex; align-items: center; gap: 10px"><span class="mono" style="color: var(--arc)">07</span><b>Assemble &amp; ship</b></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CORE -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">Core fabrication</p>
+            <h2 class="disp h2">Five core processes, run in-house.</h2>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid var(--steel-200)">
+          <article style="display: flex; flex-wrap: wrap; gap: 24px 48px; padding: 36px 0; border-bottom: 1px solid var(--steel-200)">
+            <div class="ph" style="flex: 1 1 360px; aspect-ratio: 16 / 10; max-width: 520px">[Photo: fiber laser mid-cut]</div>
+            <div style="flex: 1.3 1 420px; display: flex; flex-direction: column; gap: 14px">
+              <p class="mono" style="margin: 0; color: var(--steel-600)">01 · Laser Cutting</p>
+              <h3 class="disp h3">Fast, accurate cuts on full-size sheets.</h3>
+              <p class="body">A 6kW big-bed fiber laser cuts sheet and plate with minimal waste, and passes blanks straight to forming and welding.</p>
+              <ul class="mono" style="list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 12.5px; color: var(--steel-700)"><li>6kW fiber</li><li>158″ × 79″ max sheet</li><li>0.0004″ repeatability</li></ul>
+              <a class="link-arrow" href="/services/laser-cutting/" style="align-self: flex-start; margin-top: 8px">Laser cutting <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+            </div>
+          </article>
+          <article style="display: flex; flex-wrap: wrap; gap: 24px 48px; padding: 36px 0; border-bottom: 1px solid var(--steel-200)">
+            <div class="ph" style="flex: 1 1 360px; aspect-ratio: 16 / 10; max-width: 520px">[Photo: press brake forming]</div>
+            <div style="flex: 1.3 1 420px; display: flex; flex-direction: column; gap: 14px">
+              <p class="mono" style="margin: 0; color: var(--steel-600)">02 · Forming</p>
+              <h3 class="disp h3" id="forming">Repeatable bends, from light brackets to heavy plate.</h3>
+              <p class="body">Precision press brakes from 28 to 350 tons, plus rolling and shearing, shape cut parts to print.</p>
+              <ul class="mono" style="list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 12.5px; color: var(--steel-700)"><li>28–350 ton</li><li>10′–12′ die surface</li><li>±0.005″</li></ul>
+              <a class="link-arrow" href="/services/#forming" style="align-self: flex-start; margin-top: 8px">Forming <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+            </div>
+          </article>
+          <article style="display: flex; flex-wrap: wrap; gap: 24px 48px; padding: 36px 0; border-bottom: 1px solid var(--steel-200)">
+            <div class="ph" style="flex: 1 1 360px; aspect-ratio: 16 / 10; max-width: 520px">[Photo: Cooper Cobot robotic weld]</div>
+            <div style="flex: 1.3 1 420px; display: flex; flex-direction: column; gap: 14px">
+              <p class="mono" style="margin: 0; color: var(--steel-600)">03 · Welding</p>
+              <h3 class="disp h3" id="welding">Our strongest department, manual and robotic.</h3>
+              <p class="body">AWS-qualified welders and a robotic cell handle everything from small brackets to large multi-part weldments, built to documented WPSs.</p>
+              <ul class="mono" style="list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 12.5px; color: var(--steel-700)"><li>AWS D1.1</li><li>Up to 1″ thick</li><li>MIG · TIG · robotic · stud</li></ul>
+              <a class="link-arrow" href="/services/#welding" style="align-self: flex-start; margin-top: 8px">Welding <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+            </div>
+          </article>
+          <article style="display: flex; flex-wrap: wrap; gap: 24px 48px; padding: 36px 0; border-bottom: 1px solid var(--steel-200)">
+            <div class="ph" style="flex: 1 1 360px; aspect-ratio: 16 / 10; max-width: 520px">[Photo: HAAS machining center]</div>
+            <div style="flex: 1.3 1 420px; display: flex; flex-direction: column; gap: 14px">
+              <p class="mono" style="margin: 0; color: var(--steel-600)">04 · Machining</p>
+              <h3 class="disp h3" id="machining">Machined features without a second supplier.</h3>
+              <p class="body">CNC milling and turning add holes, threads and precise features to fabricated parts in the same building.</p>
+              <ul class="mono" style="list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 12.5px; color: var(--steel-700)"><li>HAAS VF-4 ×2</li><li>Milltronics RH30</li><li>HAAS SL-20T lathe</li></ul>
+              <a class="link-arrow" href="/services/#machining" style="align-self: flex-start; margin-top: 8px">Machining <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+            </div>
+          </article>
+          <article style="display: flex; flex-wrap: wrap; gap: 24px 48px; padding: 36px 0; border-bottom: 1px solid var(--steel-200)">
+            <div class="ph" style="flex: 1 1 360px; aspect-ratio: 16 / 10; max-width: 520px">[Photo: assembly &amp; staging]</div>
+            <div style="flex: 1.3 1 420px; display: flex; flex-direction: column; gap: 14px">
+              <p class="mono" style="margin: 0; color: var(--steel-600)">05 · Assembly</p>
+              <h3 class="disp h3" id="assembly">Finished units, ready for your line.</h3>
+              <p class="body">In-house assembly and staging areas turn fabricated parts into sub-assemblies and complete units, inspected before they ship.</p>
+              <ul class="mono" style="list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 12.5px; color: var(--steel-700)"><li>Sub-assemblies</li><li>Complete units</li><li>Visual + dimensional inspection</li></ul>
+              <a class="link-arrow" href="/services/#assembly" style="align-self: flex-start; margin-top: 8px">Assembly <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANCILLARY -->
+    <section class="sec" style="background: var(--paper)">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">Ancillary services</p>
+            <h2 class="disp h2">The finishing steps that complete the job.</h2>
+          </div>
+          <p class="body" style="max-width: 440px">Ancillary service pages use the same Service template as Laser Cutting, with a shorter spec table.</p>
+        </div>
+        <div class="g4">
+          <a class="card" href="/services/#punching"><div class="card-body"><span class="mono" style="color: var(--steel-600)">06</span><h3 class="disp h4" id="punching">Sheet Metal Punching</h3><p class="body small">A 58-station turret punch with nearly 1,000 tools on hand cuts setup time and tooling cost.</p><p class="spec">100″ × 39″ sheet · 350 strokes/min</p><span class="card-cta">Explore <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span></div></a>
+          <a class="card" href="/services/#roll-forming"><div class="card-body"><span class="mono" style="color: var(--steel-600)">07</span><h3 class="disp h4" id="roll-forming">Roll Forming</h3><p class="body small">Rolled cylinders and curves from sheet and plate.</p><p class="spec">6′ bed · up to 5/16″ thick</p><span class="card-cta">Explore <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span></div></a>
+          <a class="card" href="/services/#panel-bending"><div class="card-body"><span class="mono" style="color: var(--steel-600)">08</span><h3 class="disp h4" id="panel-bending">Panel Bending</h3><p class="body small">Clean, consistent bends on large panels and enclosure parts.</p><p class="spec">[Panel bender specs]</p><span class="card-cta">Explore <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span></div></a>
+          <a class="card" href="/quote/"><div class="card-body"><span class="mono" style="color: var(--steel-600)">09</span><h3 class="disp h4" id="finishing">Finishing &amp; Powder Coating</h3><p class="body small">In-house batch paint booth; powder coating through vetted local partners, inspected by us before shipment.</p><p class="spec">Enamels · catalyst · 2-part epoxy &amp; urethane</p><span class="card-cta">Explore <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg></span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- IN-HOUSE VALUE -->
+    <section class="sec">
+      <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 40px clamp(40px, 6cqi, 96px); align-items: center">
+        <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 20px">
+          <p class="eyebrow">The value of in-house fabrication</p>
+          <h2 class="disp h2">One PO instead of five suppliers.</h2>
+          <p class="body">When every process sits under one roof, there's no freight between shops, no finger-pointing over tolerances, and one team accountable for the finished part.</p>
+        </div>
+        <div class="g2" style="flex: 1.2 1 520px; gap: 0; border-top: 1px solid var(--steel-200); border-left: 1px solid var(--steel-200)">
+          <div style="padding: 28px; border-right: 1px solid var(--steel-200); border-bottom: 1px solid var(--steel-200)"><p class="stat-num">24–48 hr</p><p class="stat-label">Quote turnaround</p></div>
+          <div style="padding: 28px; border-right: 1px solid var(--steel-200); border-bottom: 1px solid var(--steel-200)"><p class="stat-num">2–3 wk</p><p class="stat-label">Standard lead times</p></div>
+          <div style="padding: 28px; border-right: 1px solid var(--steel-200); border-bottom: 1px solid var(--steel-200)"><p class="stat-num">20%</p><p class="stat-label">Capacity held for rush</p></div>
+          <div style="padding: 28px; border-right: 1px solid var(--steel-200); border-bottom: 1px solid var(--steel-200)"><p class="stat-num">1</p><p class="stat-label">Point of contact</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <CtaBand />
+  <Footer />
+</div>
+</BaseLayout>

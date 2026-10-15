@@ -1,91 +1,35 @@
 ---
-/**
- * Base layout — wraps every page.
- *
- * Astro 7 features used:
- *  • <Font />         — built-in font optimizer from astro.config.mjs fonts array
- *  • <ClientRouter /> — client-side navigation with CSS transition animations
- */
-
-import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
-import { brand } from '../config/brand';
-
-
-interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-  schema?: Record<string, unknown>;
-}
-
-const {
-  title = brand.name,
-  description = brand.description,
-  image = '/og-image.png',
-  schema,
-} = Astro.props;
-
-const pageTitle = title === brand.name ? title : `${title} | ${brand.name}`;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? brand.url);
+import {siteData} from '../data/siteData';
+import Interactions from '../components/Interactions.astro';
+interface Props {title:string;description:string}
+const {title,description}=Astro.props;
+const canonical=new URL(Astro.url.pathname,Astro.site??siteData.url);
+const pageTitle=`${title} | ATA Industries`;
 ---
-
-<html lang={brand.locale.split('_')[0]} class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-
-    <link rel="canonical" href={canonicalURL} />
-    <title>{pageTitle}</title>
-    <meta name="description" content={description} />
-
-    <!-- Open Graph -->
-    <meta property="og:type"        content="website" />
-    <meta property="og:url"         content={canonicalURL} />
-    <meta property="og:title"       content={pageTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image"       content={new URL(image, canonicalURL).href} />
-    <meta property="og:locale"      content={brand.locale} />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content={pageTitle} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image"       content={new URL(image, canonicalURL).href} />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-
-    <!-- Fonts -->
-
-
-
-    <!-- JSON-LD Structured Data -->
-    {schema && (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    )}
-
-    <meta name="robots" content={import.meta.env.PUBLIC_LAUNCH_APPROVED === 'true' ? 'index,follow' : 'noindex,nofollow'} />
-    <slot name="head" />
-    <ClientRouter />
-  </head>
-
-  <body class="bg-background text-text font-body antialiased">
-    <a
-      class="sr-only focus:not-sr-only focus:absolute focus:z-[99999] focus:bg-primary focus:text-primary-fg focus:px-4 focus:py-2 focus:rounded-md"
-      href="#main"
-    >
-      Skip to main content
-    </a>
-
-    <slot name="header" />
-
-    <main id="main">
-      <slot />
-    </main>
-
-    <slot name="footer" />
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content={siteData.launchApproved?'index,follow':'noindex,nofollow'} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" />
+<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:siteData.name,url:siteData.url}).replace(/</g,'\u003c')} />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<slot />
+<Interactions />
+</body>
 </html>

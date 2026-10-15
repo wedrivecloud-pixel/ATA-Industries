@@ -1,10 +1,10 @@
 # ATA Industries
 
-A static manufacturing website for stakeholder review, adapted from Alan Cuenca's MIT-licensed **Small Business Starter Version 2** (upstream commit recorded in CONTENT_AUDIT.md). Astro 7.3.2, Tailwind CSS v4, TypeScript and Playwright.
+Static Astro 7 website rebuilt from the approved Claude Design export in [`design-reference/`](design-reference/README.md). The export is committed unchanged; `ROUTE_MAP.json` records the implementation mapping. The previous starter implementation remains in Git history.
 
-## Develop
+## Development
 
-Node >=22.12 (validated with Node 24). pnpm 11.25.0.
+Node 24 and pnpm 11.25.0 were used for validation.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -14,42 +14,52 @@ pnpm build
 pnpm test
 ```
 
-For the restricted cloud home directory, use:
+On the managed cloud machine, prefix Astro commands with `ASTRO_TELEMETRY_DISABLED=1`. If its home directory is read-only, install with:
 
 ```sh
 XDG_DATA_HOME=/workspace/.local/share XDG_CACHE_HOME=/workspace/.cache pnpm install --frozen-lockfile --store-dir /workspace/.pnpm-store
 ```
 
-On cloud machines with a read-only home directory, prefix Astro commands with `ASTRO_TELEMETRY_DISABLED=1`.
+Tests require Python 3 and Chromium. They serve the actual `dist/` and test-only rendered design references on loopback port 4323. Set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` if Chromium is not at `/usr/bin/chromium`. Build before running tests. Full-page comparison screenshots are saved under ignored `visual-results/1440/` and `visual-results/390/`.
 
-The Playwright suite uses system Chromium by default (`/usr/bin/chromium`). Set PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH to another installed Chromium path, or install a browser and change the launch configuration for your platform. Tests serve the production `dist/` with Python 3 on port 4323. Run `pnpm build` before testing. Run `pnpm preview` to inspect the static build separately.
+## Design and content
 
-## Content and styling
+- `src/styles/ata.css`: verbatim exported tokens, typography and component classes. `global.css` adds small runtime/accessibility and narrow-screen fixes. No Tailwind reset overrides the approved design.
+- `src/components/Header.astro`, `Footer.astro`, `CtaBand.astro`: shared components transcribed from their respective exports.
+- `src/components/Interactions.astro`: small vanilla scripts for mega menus, mobile menu, FAQs, category filtering, equipment navigation, facility selection and validated quote-stage progression. No UI framework.
+- `src/data/*.ts`: the exported `renderVals()` arrays converted to typed data for Astro `.map()` loops.
+- `src/pages/`: one route per supplied page template plus legal variants and article routes. Blog bodies not present in the export remain explicitly marked `[Article content to be supplied]`; the supplied robotic welding article retains its sample body.
+- Archivo, IBM Plex Sans and IBM Plex Mono load from the exact Google Fonts stylesheet URL used by the design. The `.ata` wrapper has `container-type: inline-size` for `cqi` units and container queries.
 
-- `src/data/siteData.ts`: business identity, contact settings, navigation and form switch.
-- `src/data/capabilities.ts`: original proposed service copy and technical considerations.
-- `src/data/faqs.ts`: general manufacturing enquiry FAQs.
-- `src/styles/theme.css`: original theme's Tailwind design tokens.
-- `src/components/`: adapted theme components and shared enquiry/FAQ components.
-- `src/pages/`: static informational pages and data-generated capability routes.
-- `public/images/`: original temporary concept art. No borrowed company photographs.
+Keep bracketed copy and `.ph` boxes until approved content is supplied. Facts and company details reproduced from the approved export have not been independently audited; no extra equipment, capacity or history claims were added.
 
-The text-only wordmark is temporary. See CONTENT_AUDIT.md and CONTENT_GAPS.md for provenance and approval requirements. System fonts avoid third-party font requests.
+## Cloudflare Workers Builds — static assets
 
-## Build configuration and deployment
+This project deploys to a **Cloudflare Worker named `ata-industries`**, not Cloudflare Pages. `wrangler.jsonc` declares static `dist/` assets and `404-page` handling. No Cloudflare Astro adapter, Worker code, or Wrangler package dependency is required.
 
-Copy `.env.example` to `.env` for local settings (no secrets required). Set PUBLIC_SITE_URL to the confirmed HTTPS production origin before launch. It controls canonicals, Open Graph URLs, schema and sitemap. The reserved `.example` fallback is for review only. Keep PUBLIC_LAUNCH_APPROVED=false until the review is complete.
+In the existing Worker's Builds settings, connect `wedrivecloud-pixel/ATA-Industries`, branch `main`, with repository root as the working directory:
 
-Connect this GitHub repository in Netlify, build with `pnpm build`, and publish `dist/`. `netlify.toml` supplies static build settings. Other static hosts can serve `dist/`, but require a separate form integration. No deployment has been performed by this repository build.
+| Setting | Value |
+|---|---|
+| Build command | `pnpm build` |
+| Deploy command | `npx wrangler deploy` |
+| Node | `NODE_VERSION=24` |
+| pnpm | `PNPM_VERSION=11.25.0` |
 
-## Forms
+Cloudflare's build/deploy runner supplies Wrangler via the deploy command. Do not install it into this project's dependencies. Set build variables:
 
-Both forms are disabled by default and explicitly state that nothing is sent. They include accessible labels, required fields, native browser validation, length limits and a honeypot. No upload or fake success interaction is included.
+- `PUBLIC_SITE_URL`: actual HTTPS Worker/custom-domain origin; controls canonicals, Open Graph, sitemap and schema. Reserved fallback is `https://ata-industries.example`.
+- `PUBLIC_ENABLE_FORMS=false`: keep disabled pending a submission backend.
+- `PUBLIC_LAUNCH_APPROVED=false`: keeps `noindex,nofollow` on every page while reviewing.
 
-After approving contact and privacy details, deploy to Netlify with PUBLIC_ENABLE_FORMS=true, enable form detection, configure the two forms (`contact` and `quote`) and notification recipients, then test delivery and errors end to end. Do not enable forms on an arbitrary static host. This build has no custom server-side validation; add it if required by the production processing contract. Form values are sent by native POST, not placed in query strings. The generic landing page does not itself assert receipt.
+Only enable indexing after content and legal review. Build-time variables require a rebuild. This task updates and pushes the repository; deployment success must be checked in Cloudflare's build logs and against the assigned URL.
 
-Do not collect confidential drawings through this preview. Attachments need a separately approved secure upload implementation.
+## Forms and downloads
 
-## Review status
+Quote and careers forms preserve the reference interfaces and have native validation. Quote steps remain visible, matching the export, with Continue controls that validate the current stage and advance focus. There is no fake request or simulated success redirect.
 
-The required reference site could not be crawled because of proxy policy. Seven proposed service pages follow the brief, not a verified claim of ATA capacity. Contact details, manufacturing facts, photography and production domain remain approval items. No Lighthouse score is claimed.
+`PUBLIC_ENABLE_FORMS` is preserved. Actual POST/file transfer additionally requires a deliberately configured HTTPS `formEndpoint` in `src/data/siteData.ts`; it is currently empty. Thus a feature flag alone cannot send data to a nonexistent handler. Keep both forms disabled until a backend, server validation, notification recipient, spam protection, privacy policy and secure upload handling are implemented. No Netlify form integration remains.
+
+The example file row is from the design and is labelled as an example for assistive technology; it is not an uploaded file. File pickers are disabled until a backend is connected. The thank-you route labels itself as a confirmation design preview while submissions are unavailable.
+
+Certificate and capabilities PDFs were not included in the export. Their controls retain the design but are marked unavailable. Do not invent or generate certificates. See `CONTENT_GAPS.md` and `VALIDATION.md`.
